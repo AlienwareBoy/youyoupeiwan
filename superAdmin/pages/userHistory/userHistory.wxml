@@ -1,17 +1,56 @@
 <view class='index'>
-  <view class="userInfo">
-    <image></image>
-    <text>适当放松的</text>
-  </view>
-  <view>
-    <view class="row">
-      <text>充值提现历史</text>
-      <text>全部交易类型</text>
+  <view class="container">
+    <view class="header row">
+      <view class="userInfo row">
+        <image></image>
+        <text>适当放松的</text>
+      </view>
+      <view class="usermoney">
+        <text>友友币:1320</text>
+      </view>
+    </view>
+    <view class="header row">
+      <view>
+        <text></text>
+        <text class="app-fz-30">充值/提现历史</text>
+      </view>
+      <view class="row">
+        <text class="app-fz-20">充值</text>
+        <text class="iconfont icon-small-bottom-arrow"></text>
+      </view>
     </view>
     <view class="itemList">
-      <view class="item">
-        
+      <view class="item row app-mab-20">
+        <view class="iconBorder column">
+          <image class="icon" src=""></image>
+        </view>
+        <view class="itemFont column app-mal-15">
+          <text class="app-fz-20 app-color-0005 app-mab-10">提现成功</text>
+          <text class="app-fz-20 app-color-0005 app-mab-10">发起提现日期：</text>
+          <text class="app-fz-20 app-color-0005 app-mab-10">申请通过日期：</text>
+          <text class="app-fz-20 app-color-0005 app-mab-10">审批人：</text>
+        </view>
+        <view class="price column">
+          <text class="app-fz-30">-200</text>
+          <text class="app-fz-20 app-color-0005">友友币</text>
+        </view>
+      </view>
+<view class="item row app-mab-20">
+        <view class="iconBorder column">
+          <image class="icon" src=""></image>
+        </view>
+        <view class="itemFont column app-mal-15">
+          <text class="app-fz-20 app-color-0005 app-mab-10">提现成功</text>
+          <text class="app-fz-20 app-color-0005 app-mab-10">发起提现日期：</text>
+          <text class="app-fz-20 app-color-0005 app-mab-10">申请通过日期：</text>
+          <text class="app-fz-20 app-color-0005 app-mab-10">审批人：</text>
+        </view>
+        <view class="price column">
+          <text class="app-fz-30">-200</text>
+          <text class="app-fz-20 app-color-0005">友友币</text>
+        </view>
       </view>
     </view>
   </view>
- </view>
+
+</view>

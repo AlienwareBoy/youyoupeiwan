@@ -58,7 +58,9 @@ Page({
   onLoad: function(options) {
     // this.getSystemInfo() //获取系统宽高
     // this.savaCanvas()
-    this.userInfo();
+    setTimeout(() => {
+      this.userInfo();
+    })
   },
   closeMask(e) {
     setTimeout(() => {
@@ -85,7 +87,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
+
 
   },
   userInfo() {
@@ -116,7 +118,7 @@ Page({
   getSystemInfo() {
     let that = this;
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         let Math = (1334 / 750) * res.windowWidth;
         that.setData({
           windowWidth: res.windowWidth,

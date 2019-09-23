@@ -1,1 +1,57 @@
-/* superAdmin/pages/userHistory/userHistory.wxss */
+.userInfo {
+  justify-content: space-between;
+}
+
+.header {
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.userInfo image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  background: #ccc;
+}
+
+.usermoney text {
+  font-size: 30rpx;
+  color: rgba(63, 75, 85, 0.5);
+}
+
+.userInfo text {
+  font-size: 30rpx;
+  color: #000;
+  margin-left: 15rpx;
+}
+
+.container {
+  margin: 0 50rpx;
+  justify-content: space-between;
+  padding-top: 46rpx;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+  background: #000;
+}
+.iconBorder{
+  height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.itemFont{
+  align-items: flex-start;
+  margin-left: 65rpx;
+}
+.item{
+  position: relative;
+  border-bottom: 2rpx solid #d8d8d8;
+}
+.price{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+}

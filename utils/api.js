@@ -28,3 +28,6 @@ export_defalut.affirmDeal = https + `/post/affirmDeal?token=${token}`; //确认�
 export_defalut.optionCategory = https + `/cate/optionCategory?token=${token}`; //删除游戏，或者段位
 export_defalut.addlevel = https + `/cate/addlevel?token=${token}`; //新建段位
 export_defalut.usermanage = https + `/user/usermanage?token=${token}`; //用户管理
+export_defalut.usermanage = https + `/user/usermanage?token=${token}`; //用户管理
+export_defalut.optionPayLogHistory = https + `/comm/optionPayLogHistory?token=${token}`; //充值历史
+export_defalut.extractPayLogHistory = https + `/comm/extractPayLogHistory?token=${token}`; //充值历史

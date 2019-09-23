@@ -13,11 +13,43 @@
   align-items: center;
   flex-direction: column;
 }
-button{
+
+button {
   background: none;
   padding: 0rpx;
   margin: 0rpx;
 }
+
 button::after {
   border: none;
+}
+
+.app-fz-30 {
+  font-size: 30rpx;
+}
+
+.app-fz-20 {
+  font-size: 20rpx;
+}
+
+.app-fz-18 {
+  font-size: 18rpx;
+}
+
+.app-color-0001 {
+  color: rgba(63, 75, 85, 1);
+}
+
+.app-color-0005 {
+  color: rgba(63, 75, 85, 0.5);
+}
+
+.app-mal-15 {
+  margin-left: 15rpx;
+}
+.app-mab-10 {
+  margin-bottom: 10rpx;
+}
+.app-mab-20 {
+  margin-bottom: 20rpx;
 }

@@ -22,6 +22,7 @@ let $ajax = {
         data: param,
         header: this.header,
         success(res) {
+          console.log(res,'res')
           wx.hideLoading()
           console.log(res.data.code,'code')
           if (res.data.code !== 0) {
@@ -31,6 +32,7 @@ let $ajax = {
           }
         },
         fail(err) {
+          console.log('err',err)
           wx.hideLoading()
           reject(err);
         }
