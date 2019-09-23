@@ -1,0 +1,53 @@
+<view class='index'>
+  <view class="content">
+    <image class="bg" src="../../assets/images/bg_long@2x.png"></image>
+    <view class="Posting">
+      <text class="PositingMsg">发帖信息</text>
+      <text class="base">基础要求</text>
+      <view class="baseForm">
+        <view class="gender row">
+          <text class="genderLabel">性别</text>
+          <view class="radio row">
+            <view class="option row" data-type='1' catchtap="checkGender">
+              <text class="{{form.gender===1?'isClick':'noClick'}}"></text>
+              <text>男</text>
+            </view>
+            <view class="option row" data-type='0' catchtap="checkGender">
+              <text class="{{form.gender===0?'isClick':'noClick'}}"></text>
+              <text>女</text>
+            </view>
+          </view>
+        </view>
+        <picker class="picker" bindchange="bindPickerChange" data-type='userName' value="{{index}}" range="{{gameList}}" range-key="cateName">
+          <view class="pickerGame">
+            <text>游戏</text>
+            <text>{{nowClickGame}}</text>
+            <text class="iconfont iconsmall-bottom-arrow"></text>
+          </view>
+        </picker>
+        <picker class="picker" bindchange="getGrade" data-type='userName' value="{{index}}" range="{{GradeList}}" range-key="cateName">
+          <view class="pickerGame">
+            <text>等级</text>
+            <text>{{nowClickGrade}}</text>
+            <text class="iconfont iconsmall-bottom-arrow"></text>
+          </view>
+        </picker>
+        <view class="input">
+          <input placeholder="请输入年龄" placeholder-class='inputfocus' data-type="age" bindblur="getValue"></input>
+        </view>
+        <view class="input">
+          <text class="base" style="margin-bottom:90rpx;">价格设置</text>
+          <input data-type="price" placeholder="请输入所需友友币" placeholder-class='inputfocus'   bindblur="getValue"></input>
+        </view>
+        <view class="note">
+          <text class="noteFont">备注</text>
+          <textarea wx:if="{{isshowTextarea}}" bindblur="getValue" data-type='remark'></textarea>
+          <view class="noteTextarea" catchtap="showNote" wx:else>备注选填（让朋友更懂你的需求)</view>
+        </view>
+        <view class="checkOk " catchtap="check">
+          <text>确定</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,227 @@
+.content {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+.bground {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 162rpx;
+}
+
+.P1 {
+  z-index: 501;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.swiperStyle {
+  height: 100%;
+}
+
+.login .Introduction {
+  margin: 0 auto;
+  margin-top: 182rpx;
+  width: 100%;
+}
+
+.login .Introduction text {
+  display: block;
+  text-align: center;
+}
+
+.login .Introduction text:nth-child(1) {
+  margin-bottom: 17rpx;
+  font-size: 70rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 98rpx;
+}
+
+.login .Introduction text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+}
+
+.login .Introduction text:nth-child(3) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-top: 10rpx;
+}
+
+.loginBtn {
+  padding: 0 75rpx;
+  margin-top: 106rpx;
+  justify-content: space-between;
+  z-index: 501;
+  position: relative;
+}
+
+.commonBtn {
+  width: 280rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid;
+  border-image: linear-gradient(180deg, rgba(79, 203, 255, 1), rgba(39, 155, 255, 1)) 2 2;
+}
+
+.loginUp {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  line-height: 95rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.sign {
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(39, 155, 255, 1);
+  line-height: 95rpx;
+}
+
+.logining {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 501;
+}
+
+.logining text:nth-child(1) {
+  font-size: 70rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 98rpx;
+}
+
+.logining input {
+  border-bottom: 3px solid #b3dee7;
+  width: 525rpx;
+  height: 5rpx;
+  text-align: center;
+  padding-bottom: 15rpx;
+  margin: 0 auto;
+}
+
+.logining input:nth-child(2) {
+  margin-top: 99rpx;
+}
+
+.logining input:nth-child(3) {
+  margin-top: 93rpx;
+}
+
+.logining input:nth-child(4) {
+  margin-top: 93rpx;
+}
+
+.logining input:nth-child(5) {
+  margin-top: 93rpx;
+}
+
+.logining input:nth-child(6) {
+  margin-top: 93rpx;
+}
+
+.entry {
+  padding-top: 209rpx;
+}
+
+.relcom {
+  width: 525rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 95rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  justify-content: center;
+}
+
+.relBtn {
+  width: 100%;
+  padding-top: 337rpx;
+  position: relative;
+}
+
+.loginCol {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 10rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #fff;
+  line-height: 56rpx;
+}
+.registered text{
+  color: #279BFF;
+}
+.loginCol text {
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #fff;
+  line-height: 56rpx;
+}
+
+.overColor {
+  color: #fff;
+}
+
+.overColor text {
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.p3 {
+  padding-top: 79rpx;
+}
+
+.checkGender {
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 94rpx;
+}
+
+.ComSex text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border: 5rpx solid rgba(216, 216, 216, 1);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ComSex text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-left: 6rpx;
+}

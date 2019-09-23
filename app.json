@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/orderSquare/orderSquare",
+    "pages/orderCenter/orderCenter",
+    "pages/UserCode/UserCode",
+    "pages/Posting/Posting",
+    "pages/PostingSquare/PostingSquare",
+    "pages/platformOverview/platformOverview",
+    "pages/notification/notification",
+    "pages/myTeam/myTeam",
+    "pages/registered/registered",
+    "pages/userManager/userManager",
+    "pages/orderDetails/orderDetails",
+    "pages/moneyManagement/moneyManagement",
+    "pages/userInfo/userInfo",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "友友陪玩",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#279BFF",
+    "list": [
+      {
+        "pagePath": "pages/userManager/userManager",
+        "iconPath": "./assets/images/Navigation_Me1@2x1.png",
+        "selectedIconPath": "./assets/images/Navigation_Me1@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/orderSquare/orderSquare",
+        "iconPath": "./assets/images/Navigation_square2@2x.png",
+        "selectedIconPath": "./assets/images/Navigation_square1@2x.png",
+        "text": "订单广场"
+      },
+      {
+        "pagePath": "pages/notification/notification",
+        "iconPath": "./assets/images/Navigation_News2@2x.png",
+        "selectedIconPath": "./assets/images/Navigation_News1@2x.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/platformOverview/platformOverview",
+        "iconPath": "./assets/images/Navigation_Box2@2x.png",
+        "selectedIconPath": "./assets/images/Navigation_Box1@2x.png",
+        "text": "平台"
+      }
+    ]
+  },
+  "subpackages": [
+    {
+      "root": "superAdmin",
+      "pages": [
+        "pages/orderManagement/orderManagement",
+        "pages/userManagement/userManagement",
+        "pages/userHistory/userHistory",
+        "pages/addGame/addGame",
+        "pages/gameManagement/gameManagement"
+      ]
+    }
+  ],
+  "sitemapLocation": "sitemap.json"
+}

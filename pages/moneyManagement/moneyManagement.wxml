@@ -1,0 +1,72 @@
+<view class='index'>
+  <mask showMask="{{showMask}}" catchcloseMask="closeMask">
+    <view slot="centerContent">
+      <view class="Popup {{closePopup===true?'PopupShow':'PopupClose'}}">
+        <text class='PopupTitle'>{{PopupTitle}}</text>
+        <view class="priceList row">
+          <block wx:for="{{priceList}}">
+            <view class="priceChoice row" data-index='{{index}}' data-money="{{item.text}}" catchtap="choicePrice">
+              <text class="{{isChoice===index?'choice':'nochoice'}}"></text>
+              <text>{{item.text}}元</text>
+            </view>
+          </block>
+        </view>
+        <view class="confirm">
+          <view catchtap="review" class="confirmBtn {{isChoice!==null?'choiceBg':'nochoiceBg'}}">
+            <text>确认</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view slot="after">这里是插入到组件slot name="after"中的内容</view> -->
+  </mask>
+  <view class="Features row">
+    <view class="moneyManage column">
+      <text>{{money}}</text>
+      <text>我的友友币</text>
+    </view>
+    <text class="line"></text>
+    <view class="withdraw column" data-type='1' catchtap="getMoney">
+      <image class="icon" src="../../assets/images/Money_Recharge@2x.png"></image>
+      <text>充值</text>
+    </view>
+    <text class="line"></text>
+    <view class="withdraw column" data-type='2' catchtap="getMoney">
+      <image class="icon" src="../../assets/images/Money_withdrawal@2x.png"></image>
+      <text>提现</text>
+    </view>
+  </view>
+  <view class="orderList">
+    <view class="search row">
+      <view class="bills row">
+        <text></text>
+        <text>交易账单</text>
+      </view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeList}}" range-key='text'>
+        <view class="allBills row">
+          <text>{{nowSelectTitle}}</text>
+          <text class="iconfont iconsmall-bottom-arrow"></text>
+        </view>
+      </picker>
+    </view>
+    <view class="itemList">
+      <block wx:for="{{itemList}}" wx:key="{{index}}">
+        <view class="item row">
+          <image src='../../assets/images/Homepage_Post@2x.png' wx:if="{{item.type===10}}"></image>
+          <image src='../../assets/images/Money_withdrawal2@2x.png' wx:elif="{{item.type===12}}"></image>
+          <image src='../../assets/images/Money_Recharge2@2x.png' wx:elif="{{item.type===14}}"></image>
+          <image src='../../assets/images/Money_Recharge2@2x.png' wx:elif="{{item.type===20}}"></image>
+          <view class="time column">
+            <text wx:if="{{item.type===10}}">发帖</text>
+            <text wx:elif="{{item.type===12}}">提现</text>
+            <text wx:elif="{{item.type===14}}">抢单成功</text>
+            <text wx:elif="{{item.type===20}}">充值</text>
+            <text>{{item.createTime}}</text>
+          </view>
+          <text class="Amount">+{{item.price}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,66 @@
+<view class='userInfo'>
+  <image class="bground" src="../../assets/images/bg@2x.png"></image>
+  <view class="userMsg row">
+    <image src="{{userInfo.headImg}}"></image>
+    <view class="userId">
+      <text>{{userInfo.userName}}</text>
+      <text>邀请码:{{userInfo.invitationCode}}</text>
+    </view>
+    <view wx:if="{{isShow}}">
+      <text class="edit" catchtap="edit" wx:if="{{isEdit}}">编辑</text>
+    </view>
+
+  </view>
+  <view class="Form">
+    <view class="formItem row">
+      <image class="labelIcon" src="../../assets/images/Message_tel@2x.png"></image>
+      <text>联系电话</text>
+      <input value="{{userInfo.phone}}" wx:if="{{!isEdit&&isShow}}" bindblur="getName"></input>
+      <text wx:else>{{userInfo.phone}}</text>
+    </view>
+    <view class="formItem row">
+      <image class="labelIcon" src="../../assets/images/Message_gender@2x.png"></image>
+      <text>性别</text>
+      <input type="number" value="{{userInfo.gender==='1'?'男':'女'}}" wx:if="{{!isEdit&&isShow}}" bindblur="getPhone"></input>
+      <text wx:elif="{{userInfo.gender==='1'}}">男</text>
+      <text wx:else>女</text>
+    </view>
+    <!-- <view class="formItem row">
+      <image class="labelIcon" src="../../assets/images/Message_wechat@2x.png"></image>
+      <text>微信号</text>
+      <input placeholder="{{userForm.wx}}" wx:if="{{isEdit}}" bindblur="getGender"></input>
+      <text wx:else>{{userForm.wx}}</text>
+    </view> -->
+    <view class="formCode">
+      <view class="row">
+        <image class="labelIcon" src="../../assets/images/Message_down@2x.png"></image>
+        <text class="code">我的收款码</text>
+      </view>
+      <image class="UploadImage" src="{{userInfo.payCodeUrl}}"></image>
+      <text class="upload" wx:if="{{!isEdit&&isShow}}" catchtap="uploadImage">上传新的收款码</text>
+    </view>
+    <view class="formItem row">
+      <image class="labelIcon" src="../../assets/images/Message_game name@2x.png"></image>
+      <text>游戏名称</text>
+      <picker class="picker" bindchange="bindPickerChange" wx:if="{{!isEdit&&isShow}}" data-type='userName' value="{{index}}" range="{{gameList}}" range-key="cateName">
+        <input value="{{userInfo.cateName}}" disabled="" bindblur="getWx"></input>
+      </picker>
+      <text wx:else>{{userInfo.cateName}}</text>
+    </view>
+    <view class="formItem row">
+      <image class="labelIcon" src="../../assets/images/Message_game Level@2x.png"></image>
+      <text>游戏等级</text>
+      <picker class="picker" bindchange="getGrade" data-type='userName' wx:if="{{!isEdit&&isShow}}" value="{{index}}" range="{{GradeList}}" range-key="cateName">
+        <input value="{{userInfo.level}}"  bindblur="getWx" disabled></input>
+      </picker>
+      <text wx:else>{{userInfo.level}}</text>
+    </view>
+  </view>
+  <view wx:if="{{isShow}}">
+    <view class="editBtn" wx:if="{{!isEdit}}">
+      <text catchtap="editFalse">取消</text>
+      <text catchtap="checkInfo">确定</text>
+    </view>
+  </view>
+
+</view>

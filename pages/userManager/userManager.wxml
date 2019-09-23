@@ -1,0 +1,113 @@
+<view class='index'>
+  <view class="headerBg">
+    <image class="leftBg comColr" src='../../assets/images/Hompage_decoration2@2x.png'></image>
+    <view class="header">
+      <image class="userInfo" src="../../assets/images/Hompage_decoration3@2x.png"></image>
+      <image class="userAvater" src="{{userInfo.avatarUrl}}"></image>
+      <text class="userName">{{nowUser.userName}}</text>
+      <text class="Nameplate">{{userNameplate}}</text>
+      <text class="Nameplate idborder">邀请码:{{nowUser.invitationCode}}</text>
+      <view class="features row">
+        <view class="Myteam">
+          <navigator url="../myTeam/myTeam">
+            <text>{{nowUser.teamNumber}}</text>
+            <text>我的团队</text>
+          </navigator>
+        </view>
+        <text class="line"></text>
+        <view class="shareCode column" catchtap="openShare">
+          <image src="../../assets/images/homepage_invitation@2x.png"></image>
+          <text>发起邀请</text>
+        </view>
+      </view>
+    </view>
+    <image class="rightBg comColr" src='../../assets/images/Hompage_decoration1@2x.png'></image>
+  </view>
+  <view class="userCenter">
+    <view class="comlyout">
+      <text class="title">发帖中心</text>
+      <view class="ModuleList row">
+        <view class="moduleItem ">
+          <navigator url="../moneyManagement/moneyManagement?money={{nowUser.usableMoney}}">
+            <text>{{nowUser.usableMoney}}</text>
+            <text>我的余额</text>
+          </navigator>
+        </view>
+        <view class="moduleItem column">
+          <navigator url="../PostingSquare/PostingSquare?status=10">
+            <image src="../../assets/images/Homepage_Posted@2x.png" class="icon" alt="" />
+            <text>已发帖管理</text>
+          </navigator>
+        </view>
+        <view class="moduleItem column">
+          <navigator url="../Posting/Posting">
+            <image src="../../assets/images/Homepage_Post@2x.png" class="icon" alt="" />
+            <text>立即发帖</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="comlyout">
+      <text class="title">订单中心</text>
+      <view class="ModuleList row">
+        <view class="moduleItem column">
+          <navigator url="../orderCenter/orderCenter">
+            <image src="../../assets/images/Homepage_Single@2x.png" class="icon" alt="" />
+            <text>正在抢单</text>
+          </navigator>
+        </view>
+        <view class="moduleItem column">
+          <navigator url="../orderCenter/orderCenter">
+            <image src="../../assets/images/Homepage_Clinch a deal@2x.png" class="icon" alt="" />
+            <text>成交订单</text>
+          </navigator>
+        </view>
+        <view class="moduleItem column">
+          <navigator url="../orderCenter/orderCenter">
+            <image src="../../assets/images/Homeage_history@2x.png" class="icon" alt="" />
+            <text>历史订单</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="itemList">
+    <block wx:for="{{permissions}}" wx:key="{{index}}">
+      <navigator url="{{item.url}}">
+        <view class="item" wx:if="{{item.toPath}}">
+          <image src="{{item.icon}}" class="itemIcon"></image>
+          <text class="itemFont">{{item.pathName}}</text>
+          <text class="iconfont icon-right arraw"></text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <mask showMask="{{showMask}}" catchcloseMask="closeMask">
+    <view slot="centerContent">
+      <view class="shareType row {{showShare===true?'showShare':'closeShare'}}">
+        <button open-type="share" class="comShare column">
+          <image src="../../assets/images/Share@2x.png"></image>
+          <text>分享</text>
+        </button>
+        <view class="comShare column" catchtap="saveImage">
+          <image src="../../assets/images/Pic@2x.png"></image>
+          <text>生成海报</text>
+        </view>
+      </view>
+    </view>
+  </mask>
+  <mask showMask='{{showPopup}}' catchcloseMask="closeMask">
+    <view slot="centerContent">
+      <view class="Popup column">
+        <text class="prompt">邀请码已生成</text>
+        <image class="shareImgage"></image>
+        <view class="saveShareImage row">
+          <text>保存海报</text>
+        </view>
+      </view>
+    </view>
+  </mask>
+  <!-- <view class='ContentCanvas'>
+    <canvas id='mycanvas' canvas-id='mycanvas'></canvas>
+  </view> -->
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "余额管理",
+  "usingComponents": {
+    "mask": "../../component/Mask/Mask"
+  }
+}

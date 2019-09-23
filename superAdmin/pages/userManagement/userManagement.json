@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mini-input": "../../../component/input/input",
+    "picker-bottom": "../../../component/picker-bottom/picker-bottom"
+  }
+}

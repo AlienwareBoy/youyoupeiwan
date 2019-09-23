@@ -1,0 +1,32 @@
+/* pages/UserCode/UserCode.wxss */
+
+.centerImage image {
+  width: 525rpx;
+  height: 525rpx;
+  background: #ccc;
+  border-top: 10rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.bground {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+.centerImage text {
+  font-size: 60rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 84rpx;
+  display: block;
+  text-align: center;
+}
+.centerImage{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+}

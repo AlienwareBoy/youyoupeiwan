@@ -1,0 +1,17 @@
+<view class='index'>
+  <view class="userInfo">
+    <image></image>
+    <text>适当放松的</text>
+  </view>
+  <view>
+    <view class="row">
+      <text>充值提现历史</text>
+      <text>全部交易类型</text>
+    </view>
+    <view class="itemList">
+      <view class="item">
+        
+      </view>
+    </view>
+  </view>
+ </view>

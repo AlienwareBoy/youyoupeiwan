@@ -1,0 +1,43 @@
+<view class='login'>
+  <view class="content">
+    <swiper class="swiperStyle" current="{{current}}">
+      <swiper-item catchtouchmove='LoginMove'>
+        <view class="P1">
+          <image class="bground" src="../../assets/images/bg@2x.png"></image>
+          <image class="bg" src="../../assets/images/bg_game@2x.png"></image>
+          <view class="Introduction">
+            <text>你好鸭!</text>
+            <text>欢迎来到友友伴玩，这里</text>
+            <text>遍布各类高手能替你打怪升级</text>
+          </view>
+          <view class="loginBtn row">
+            <button class="commonBtn sign" open-type="getUserInfo" bindgetuserinfo="toReg">
+              <text>注册</text>
+            </button>
+            <button class="commonBtn loginUp" open-type="getUserInfo"  bindgetuserinfo="currentAdd" >
+              <text>登录</text>
+            </button>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item catchtouchmove='LoginMove'>
+        <view class="entry">
+          <image class="bground" src="../../assets/images/bg@2x.png"></image>
+          <view class="logining">
+            <text>用户登录</text>
+            <input placeholder="请输入用户名" bindinput="getuserName"></input>
+            <input placeholder="请输入密码" type="password" bindinput="getpassWord"></input>
+          </view>
+          <view class="relBtn">
+            <view class="row relcom  loginCol" catchtap="userLogin">
+              <text>登录</text>
+            </view>
+            <view class="registered relcom" catchtap="toRegPage">
+              <text>注册</text>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

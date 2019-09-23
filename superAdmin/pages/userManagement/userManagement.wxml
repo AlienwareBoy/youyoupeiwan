@@ -1,0 +1,45 @@
+<view class='index'>
+  <mini-input></mini-input>
+  <view class="itemList">
+    <block wx:for="{{itemList}}">
+      <view class="item row">
+        <view class="column" style="height:100%">
+          <image class="userImage" src="{{item.headImg}}"></image>
+        </view>
+        <view class="userInfo column">
+          <text class="userName">{{item.userName}}</text>
+          <view class="money">
+            <text>当前余额:{{item.useMoney}}</text>
+            <text wx:if="{{item.reUserName===''}}" style="color:red">自然进入</text>
+            <text wx:else>邀请人:{{item.reUserName}}</text>
+          </view>
+          <text class="joinTime">{{item.createTime}}</text>
+        </view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <text class="options iconfont icon-sangedian"></text>
+        </picker>
+      </view>
+    </block>
+  </view>
+  <picker-bottom>
+    <view class="userGradeOptions">
+      <view class="">
+        <text>用户等级</text>
+        <view class="userLevel">
+          <view class="levelItem">
+            <text></text>
+            <text>用户</text>
+          </view>
+          <view class="levelItem">
+            <text></text>
+            <text>会员</text>
+          </view>
+          <view class="levelItem">
+            <text></text>
+            <text>超管</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </picker-bottom>
+</view>.

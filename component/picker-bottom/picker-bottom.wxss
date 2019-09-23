@@ -1,0 +1,28 @@
+.Mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+}
+
+.Popup {
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  z-index: 501;
+  transition: bottom 0.2s ease;
+}
+
+.showPopup {
+  bottom: 0rpx;
+}
+
+.hiddenPopup {
+  bottom: -660rpx;
+}

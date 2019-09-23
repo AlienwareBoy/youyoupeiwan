@@ -1,0 +1,165 @@
+<view class='index'>
+  <view class="container">
+    <view class="indicatorDots row">
+      <block wx:for="{{DotsList}}" wx:key="{{index}}">
+        <view class="DotsItem" data-index='{{item.status}}' catchtap="choiceDots">
+          <text>{{item.text}}</text>
+          <text wx:if="{{clickIndex===item.status?true:false}}"></text>
+        </view>
+      </block>
+    </view>
+    <view class="orderList">
+      <swiper circular="{{true}}" current="{{swiperIndex}}" style="height:100%;" bindchange='changeClickIndex'>
+        <swiper-item class='swiperItem'>
+          <block wx:for="{{itemList}}" wx:key="{{item.orderId}}">
+            <scroll-view scroll-y class="scrollViewStyle">
+              <view class="orderItem">
+                <view class="fixedBorder">
+                  <view class="fiexLeft">
+                    <text class="gameName" wx:if="{{item.status===10&&item.linkphone===true}}">已被获取联系方式</text>
+                     <text class="gameName" wx:elif="{{item.status===14&&item.linkphone===true}}">交易成功</text>
+                    <text class="gameName" wx:else>抢单中</text>
+                    <view class="userInfo row">
+                      <text wx:if="{{item.gender==='1'}}">男</text>
+                      <text wx:else>女</text>
+                      <text>{{item.age}}</text>
+                      <text>{{item.cateName1}}</text>
+                    </view>
+                    <view class="dataStyle row">
+                      <text class="borderStyle"></text>
+                      <text class="orderDate">日期：{{item.createTime}}</text>
+                    </view>
+                  </view>
+                  <view class="fiexedMoney">
+                    <text>{{item.price}}</text>
+                    <text>友友币</text>
+                  </view>
+                </view>
+                <view class="changeBorder">
+                  <view class="changeState_ing" wx:if="{{item.status===10&&item.linkphone===true}}">
+                    <view class="dataStyle row">
+                      <text class="orderDate">联系人</text>
+                    </view>
+                    <view class="changeState_call">
+                      <view class="infoItem row">
+                        <text>{{item.userName}}</text>
+                        <text>微信号:{{item.wechatId}}</text>
+                        <text class="row" data-phone="{{item.wechatId}}" catchtap="getPhone">复制联系方式</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+          </block>
+        </swiper-item>
+        <!-- <swiper-item class='swiperItem'>
+          <scroll-view scroll-y class="scrollViewStyle">
+            <view class="orderItem">
+              <view class="fixedBorder">
+                <view class="fiexLeft">
+                  <text class="gameName">王者荣耀·刺激战场</text>
+                  <view class="userInfo row">
+                    <text>广州</text>
+                    <text>男</text>
+                    <text>23</text>
+                    <text>王者荣耀</text>
+                  </view>
+                  <view class="dataStyle row">
+                    <text class="borderStyle"></text>
+                    <text class="orderDate">日期：2019-08-28   12:00</text>
+                  </view>
+                </view>
+                <view class="fiexedMoney">
+                  <text>481</text>
+                  <text>友友币</text>
+                </view>
+              </view>
+              <view class="changeBorder">
+                <view class="changeState_call">
+                  <view class="infoItem">
+                    <text>已获得联系人</text>
+                    <text>动词大水电费</text>
+                    <text>微信号:1231313221</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item> -->
+        <!-- <swiper-item class='swiperItem'>
+          <scroll-view scroll-y class="scrollViewStyle">
+            <view class="orderItem">
+              <view class="fixedBorder">
+                <view class="fiexLeft">
+                  <text class="gameName">王者荣耀·刺激战场</text>
+                  <view class="userInfo row">
+                    <text>广州</text>
+                    <text>男</text>
+                    <text>23</text>
+                    <text>王者荣耀</text>
+                  </view>
+                  <view class="dataStyle row">
+                    <text class="borderStyle"></text>
+                    <text class="orderDate">日期：2019-08-28   12:00</text>
+                  </view>
+                </view>
+                <view class="fiexedMoney">
+                  <text>481</text>
+                  <text>友友币</text>
+                </view>
+              </view>
+              <view class="changeBorder">
+                <view class="changeState_call">
+                  <view class="changeState_success">
+                    <view class="infoItem">
+                      <text>交易人</text>
+                      <text>动词大水电费</text>
+                      <text>微信号:1231313221</text>
+                      <text>交易成功</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item> -->
+        <!-- <swiper-item class='swiperItem'>
+          <scroll-view scroll-y class="scrollViewStyle">
+            <view class="orderItem">
+              <view class="fixedBorder">
+                <view class="fiexLeft">
+                  <text class="gameName">王者荣耀·刺激战场</text>
+                  <view class="userInfo row">
+                    <text>广州</text>
+                    <text>男</text>
+                    <text>23</text>
+                    <text>王者荣耀</text>
+                  </view>
+                  <view class="dataStyle row">
+                    <text class="borderStyle"></text>
+                    <text class="orderDate">日期：2019-08-28   12:00</text>
+                  </view>
+                </view>
+                <view class="fiexedMoney">
+                  <text>481</text>
+                  <text>友友币</text>
+                </view>
+              </view>
+              <view class="changeBorder">
+                <view class="changeState_call">
+                  <view class="infoItem">
+                    <text>已获得联系人</text>
+                    <text>动词大水电费</text>
+                    <text>微信号:1231313221</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item> -->
+      </swiper>
+    </view>
+  </view>
+
+</view>

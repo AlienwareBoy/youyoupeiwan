@@ -1,0 +1,311 @@
+.goodsDetail {
+  padding: 70rpx 50rpx 0rpx 50rpx;
+}
+
+.goodsImage {
+  width: 237rpx;
+  height: 237rpx;
+  border-radius: 10rpx;
+}
+
+.goodsImage image {
+  width: 100%;
+  height: 100%;
+}
+
+.msg {
+  margin-left: 40rpx;
+  height: 100%;
+}
+
+.msgTitle {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-bottom: 21rpx;
+  display: block;
+}
+
+.condition {
+  margin-bottom: 10rpx;
+}
+
+.condition text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.condition text:nth-child(2) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 28rpx;
+  margin-left: 10rpx;
+}
+
+.Remarks {
+  margin: 50rpx 50rpx 0rpx 50rpx;
+  position: relative;
+  padding-bottom: 50rpx;
+}
+
+.Remarks .line {
+  position: absolute;
+  height: 5rpx;
+  background: rgba(233, 233, 233, 1);
+  border-radius: 5rpx;
+  width: 100%;
+  bottom: 0rpx;
+}
+
+.Remarks text:nth-child(1) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 28rpx;
+}
+
+.Remarks text:nth-child(2) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(216, 216, 216, 1);
+  display: block;
+  margin-top: 15rpx;
+}
+
+.waitingManList {
+  margin: 50rpx;
+  margin-bottom: 120rpx;
+}
+
+.waitingTitle {
+}
+
+.waitingManList .waitingTitle text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.waitingManList .waitingTitle text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-left: 6rpx;
+}
+
+.waitList {
+  margin-top: 26rpx;
+}
+
+.waitList .item {
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+
+.isClick {
+  background: linear-gradient(270deg, rgba(200, 231, 255, 0.2) 0%, rgba(39, 155, 255, 0.2) 100%);
+}
+
+.waitList .item .who {
+}
+
+.btnFont {
+  font-size: 40rpx;
+  font-family: PingFangSC-Semibold, PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 56rpx;
+}
+
+.getPhoneText text:nth-child(2) {
+  font-size: 18rpx;
+  font-family: PingFangSC-Semibold, PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 25rpx;
+  display: block;
+}
+
+.waitList .item .who image {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(216, 216, 216, 1);
+  border-radius: 10rpx;
+}
+
+.waitList .item .who text {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+  margin-left: 15rpx;
+}
+
+.addTime  text:nth-child(1) {
+  width: 20rpx;
+  height: 20rpx;
+  background: rgba(233, 233, 233, 1);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.addTime  text:nth-child(2) {
+  font-size: 15rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 21rpx;
+  margin-left: 2rpx;
+  margin-right: 113rpx;
+}
+
+.tobuy {
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 98rpx;
+  border-top: 1rpx solid #ccc;
+  background: #fff;
+}
+
+.joinPrice {
+  position: absolute;
+  right: 322rpx;
+  top: 18rpx;
+}
+
+.joinPrice text:nth-child(1) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 42rpx;
+  margin-right: 10rpx;
+}
+
+.joinPrice text:nth-child(2) {
+  font-size: 50rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 70rpx;
+}
+
+.buyBtn {
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  width: 299rpx;
+  height: 100%;
+  background: rgba(63, 75, 85, 1);
+  justify-content: center;
+  font-size: 40rpx;
+  color: rgba(255, 255, 255, 1);
+}
+
+.isjoin {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 0.5) 0%, rgba(39, 155, 255, 0.5) 100%);
+}
+
+.nojoin {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+}
+
+/* 遮罩层 */
+
+.mask {
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 500;
+}
+
+.mask .maskContent {
+  width: 560rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.
+.success {
+}
+
+.success text:nth-child(1) {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(63, 75, 85, 1);
+  line-height: 50rpx;
+  margin-top: 50rpx;
+}
+
+.success image {
+  width: 488rpx;
+  height: 330rpx;
+  background: rgba(235, 235, 235, 1);
+  margin-top: 24rpx;
+}
+
+.success text:nth-child(3) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(136, 136, 136, 1);
+  line-height: 42rpx;
+  margin-top: 18rpx;
+  margin-bottom: 30rpx;
+}
+
+.toPath text {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(63, 75, 85, 1);
+  line-height: 50rpx;
+}
+
+.toPath {
+  border-top: 1rpx solid #e5e5e5;
+  height: 100rpx;
+  justify-content: center;
+}
+
+.successUser {
+  width: 165rpx;
+  height: 82rpx;
+  background: linear-gradient(180deg, rgba(255, 216, 124, 1) 0%, rgba(255, 176, 70, 1) 100%);
+  border-radius: 10rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}
+
+.successUser text {
+  font-size: 30rpx;
+  color: rgba(63, 75, 85, 1);
+}

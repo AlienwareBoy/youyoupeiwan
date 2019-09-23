@@ -1,0 +1,5 @@
+<view class="Mask" bind:tap="closePopup" wx:if="{{closePopup}}">
+  <view class="Popup {{isShowPopup?'showPopup':'hiddenPopup'}}" style="height:{{height}}" catch:tap='stopClose'>
+    <slot></slot>
+  </view>
+</view>

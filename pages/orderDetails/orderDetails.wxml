@@ -1,0 +1,80 @@
+<view class='index'>
+  <view class="goodsDetail row">
+    <view class="goodsImage">
+      <image src="{{orderInfo.cateUrl}}"></image>
+    </view>
+    <view class="msg">
+      <text class="msgTitle">{{orderInfo.cateName}}·{{orderInfo.level}}</text>
+      <view class="condition row">
+        <text></text>
+        <text wx:if="{{orderInfo.gender===1}}">男</text>
+        <text wx:else>女</text>
+      </view>
+      <view class="condition row">
+        <text></text>
+        <text>{{orderInfo.age}}</text>
+      </view>
+      <view class="condition row">
+        <text></text>
+        <text>{{orderInfo.level}}</text>
+      </view>
+
+    </view>
+  </view>
+  <view class="Remarks">
+    <text>备注</text>
+    <text>{{orderInfo.remark}}</text>
+    <view class="line"></view>
+  </view>
+  <view class="waitingManList">
+    <view class="waitingTitle row">
+      <text></text>
+      <text>正在抢单会员{{orderInfo.users.length}} </text>
+    </view>
+    <view class="waitList column">
+      <block wx:for="{{orderInfo.users}}" wx:key="{{item.userId}}">
+        <view class="item row {{isGetPhoneIndex==item.userId?'isClick':''}}" data-state="{{item.postLink}}" data-wechat="{{item.wechat}}" data-id="{{item.userId}}" catchtap="getPhone">
+          <view class="who row">
+            <image src="{{item.headImg}}"></image>
+            <text>{{item.userName}}</text>
+          </view>
+          <view class="successUser" wx:if="{{item.success}}">
+            <text>交易人</text>
+          </view>
+          <view class="addTime row">
+            <text></text>
+            <text>日期：{{item.createTime}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="tobuy">
+    <view class="joinPrice">
+      <text>友友币:</text>
+      <text>{{orderInfo.price}}</text>
+    </view>
+    <view class="buyBtn row {{orderInfo.postIs?'isjoin':'nojoin'}}" catchtap="tobuy" wx:if="{{orderStatus!==14}}">
+      <text class="btnFont" wx:if="{{orderInfo.status===14}}">已完结</text>
+      <text class="btnFont" wx:elif="{{postLink}}">确认交易</text>
+      <view class="getPhoneText column" wx:elif="{{isSeeJoiner}}">
+        <text class="btnFont">获取微信</text>
+        <text>点击抢单会员直接复制微信号</text>
+      </view>
+      <text class="btnFont" wx:elif="{{orderInfo.postIs}}">已参与</text>
+      
+      <text class="btnFont" wx:else>参与抢单</text>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{isSuccess}}">
+    <view class="maskContent">
+      <view class="success column">
+        <text>成功参与抢单</text>
+        <image src="../../assets/images/successful@2x.png"></image>
+      </view>
+      <view class="toPath row " catchtap="closeMask">
+        <text>我知道了</text>
+      </view>
+    </view>
+  </view>
+</view>

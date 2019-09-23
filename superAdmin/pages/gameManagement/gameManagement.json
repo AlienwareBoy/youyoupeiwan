@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "picker-bottom": "../../../component/picker-bottom/picker-bottom"
+  }
+}

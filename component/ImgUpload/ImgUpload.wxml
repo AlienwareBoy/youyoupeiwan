@@ -1,0 +1,14 @@
+<!-- 上传图片 -->
+<view class='Upload'>
+  <view class='UploadList row_start'>
+    <block wx:for="{{imgList}}" wx:key="{{item}}" wx:if="{{imgList.length!=0}}">
+      <view class='img-item'>
+        <image src='{{item.url}}'></image>
+      </view>
+    </block>
+    <view class='addImg' catchtap='addFile'>
+      <text></text>
+      <text></text>
+    </view>
+  </view>
+</view>

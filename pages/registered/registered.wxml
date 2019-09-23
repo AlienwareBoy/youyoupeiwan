@@ -1,0 +1,40 @@
+<view class="registeredPage">
+  <view class="entry">
+    <image class="bground" src="../../assets/images/bg@2x.png"></image>
+    <view class="logining">
+      <text class="loginTitle">用户注册</text>
+      <input placeholder="请输入邀请码(可选)" value="{{invitationCode}}" data-type='invitationCode' bindblur="writeInput"></input>
+      <input placeholder="请输入账户名" data-type='userName' bindblur="writeInput"></input>
+      <input placeholder="请输入密码" data-type='password' type="password" bindblur="writeInput"></input>
+      <input placeholder="请输入联系方式" data-type='phone' type="password" bindblur="writeInput"></input>
+      <picker class="picker" bindchange="bindPickerChange" data-type='userName' value="{{index}}" range="{{gameList}}" range-key="cateName">
+        <input value="{{checkcForm.cateName}}" placeholder="请选择游戏" data-type='phone'  bindblur="writeInput" disabled></input>
+      </picker>
+      <picker class="picker" bindchange="getGrade" data-type='userName' value="{{index}}" range="{{GradeList}}" range-key="cateName">
+        <input value="{{checkcForm.level}}" placeholder="请选择等级" data-type='phone'  bindblur="writeInput" disabled></input>
+      </picker>
+      <view class="checkGender row">
+        <view class="ComSex row" data-type='1' catchtap="choiceGender">
+          <text class="{{isMan===1?'isClick':'noClick'}}"></text>
+          <text>男</text>
+        </view>
+        <view class="ComSex row" data-type='2' catchtap="choiceGender">
+          <text class="{{isMan===2?'isClick':'noClick'}}"></text>
+          <text>女</text>
+        </view>
+      </view>
+      <view class="collectionCode">
+        <image class="avatarUrl" src="{{checkcForm.payCodeUrl}}" wx:if="{{checkcForm.payCodeUrl!==''}}"></image>
+        <view class="introduceCode column" catchtap="uploadImage" wx:else>
+          <text>点击上传自己的收款二维码</text>
+          <text>（微信二维码收款码）</text>
+        </view>
+      </view>
+    </view>
+    <view class="relBtn p3">
+      <view open-type="getUserInfo" catchtap="registered" class=" relcom loginCol">
+        <text>注册</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,196 @@
+/* pages/Posting/Posting.wxss */
+
+.content {
+  /* width: 100%;
+  position: fixed;
+  height: 100%;
+  left: 0rpx;
+  top: 0rpx; */
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 2013rpx;
+}
+
+.Posting {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 501;
+  padding-top: 74rpx;
+}
+
+.base {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  text-align: center;
+  display: block;
+  margin-top: 90rpx;
+}
+
+.PositingMsg {
+  font-size: 60rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 84rpx;
+  display: block;
+  text-align: center;
+}
+
+.baseForm {
+  margin: 0 113rpx;
+}
+
+.radio {
+  /*  */
+  margin-left: 45rpx;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.option {
+  justify-content: center;
+}
+
+.genderLabel {
+  width: 100rpx;
+  display: inline-block;
+}
+
+.gender {
+  margin-top: 120rpx;
+}
+
+.option text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid rgba(179, 222, 231, 1);
+  display: inline-block;
+}
+
+.option text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-left: 6rpx;
+}
+
+.pickerGame {
+  border-bottom: 3rpx solid #b3dee7;
+  position: relative;
+  padding-bottom: 17rpx;
+  margin-top: 88rpx;
+  text-align: center;
+  margin-bottom: 90rpx;
+}
+
+.pickerGame text:nth-child(1) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 42rpx;
+  position: absolute;
+  left: 0rpx;
+  bottom: 17rpx;
+}
+
+.pickerGame text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  text-align: center;
+}
+
+.pickerGame text:nth-child(3) {
+  position: absolute;
+  right: 0rpx;
+  bottom: 17rpx;
+  color: #d8d8d8;
+}
+
+.input input {
+  border-bottom: 3rpx solid #b3dee7;
+  padding-bottom: 20rpx;
+  text-align: center;
+}
+
+.inputfocus {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 42rpx;
+}
+
+.note {
+  text-align: center;
+  margin-top: 90rpx;
+}
+
+.noteFont {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  display: block;
+  margin-bottom: 90rpx;
+}
+
+.note textarea {
+  width: 525rpx;
+  height: 253rpx;
+  border-radius: 10rpx;
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}
+
+.checkOk {
+  width: 525rpx;
+  height: 95rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 145rpx;
+}
+
+.checkOk text {
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 95rpx;
+}
+
+.noteTextarea {
+  width: 525rpx;
+  height: 253rpx;
+  border-radius: 10rpx;
+  border: 5rpx solid rgba(179, 222, 231, 1);
+  line-height: 253rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+}
+.noClick {
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}
+
+.isClick {
+  background: rgba(63, 75, 85, 1);
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}

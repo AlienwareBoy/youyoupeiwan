@@ -1,0 +1,99 @@
+<view class='index'>
+  <view class="itemList">
+    <block wx:for="{{notificationList}}" wx:key="item.value">
+      <view class="item column">
+        <text class="IssuerName" wx:if="{{item.state===0}}">{{item.receiverName}}</text>
+        <text class="getMoneyState" wx:if="{{item.state===4}}">发起提现</text>
+        <text class="getMoneyState" wx:if="{{item.state===5}}">交易成功</text>
+        <text class="getMoneyState" wx:if="{{item.state===6}}">充值成功</text>
+        <view class="userInfo row" wx:if="{{item.state===0||item.state===5}}">
+          <text>·{{item.city}}</text>
+          <text>·{{item.gender}}</text>
+          <text>·{{item.age}}</text>
+          <text>·{{item.game}}</text>
+        </view>
+        <view class="joinTime row">
+          <text></text>
+          <text>日期：{{item.time}}</text>
+        </view>
+        <view class="result">
+          <!--  -->
+          <view class="price" wx:if="{{item.mockMoney!==''&&item.reallyPrice===''}}">
+            <text></text>
+            <text>{{item.mockMoney}}友币</text>
+          </view>
+          <!-- 提现金额 -->
+          <view class="price" wx:if="{{item.reallyPrice!==''&&item.mockMoney===''}}">
+            <text>¥</text>
+            <text>{{item.reallyPrice}}</text>
+          </view>
+          <text class="resultFont" wx:if="{{item.state===0}}">参与抢单</text>
+          <!-- <text class="getPhone">复制联系方式</text> -->
+        </view>
+      </view>
+    </block>
+    <!-- 
+    <view class="item column">
+      <text class="IssuerName">Jennifer Harris</text>
+      <view class="userInfo row">
+        <text>·广州</text>
+        <text>·男</text>
+        <text>·23</text>
+        <text>·王者荣耀</text>
+      </view>
+      <view class="joinTime row">
+        <text></text>
+        <text>日期：2019-08-28   12:00</text>
+      </view>
+      <view class="result">
+        <text class="getPhone">复制联系方式</text>
+      </view>
+    </view>
+    <view class="item column">
+      <text class="IssuerName">Jennifer Harris</text>
+      <view class="userInfo row">
+        <text>·广州</text>
+        <text>·男</text>
+        <text>·23</text>
+        <text>·王者荣耀</text>
+      </view>
+      <view class="joinTime row">
+        <text></text>
+        <text>日期：2019-08-28   12:00</text>
+      </view>
+      <view class="result">
+        <view class="price">
+          <text>¥</text>
+          <text>200</text>
+        </view>
+        <text class="resultFont">参与抢单</text>
+        <text class="getPhone">复制联系方式</text>
+      </view>
+    </view>
+    <view class="item column">
+      <view class="closeUserId">
+        <text class="">被封号</text>
+        <text>被封号原因，文本内容文本内容文本内容文本内容文本内容被封号原因，文本内容文本内容文本内容文本内容文本内容被封号原因，文本内容文本内容文本内容文内容文本内容</text>
+      </view>
+      <text class="IssuerName">Jennifer Harris</text>
+      <view class="userInfo row">
+        <text>·广州</text>
+        <text>·男</text>
+        <text>·23</text>
+        <text>·王者荣耀</text>
+      </view>
+      <view class="joinTime row">
+        <text></text>
+        <text>日期：2019-08-28   12:00</text>
+      </view>
+      <view class="result">
+        <view class="price">
+          <text>¥</text>
+          <text>200</text>
+        </view>
+        <text class="resultFont">参与抢单</text>
+        <text class="getPhone">复制联系方式</text>
+      </view>
+    </view> -->
+  </view>
+</view>

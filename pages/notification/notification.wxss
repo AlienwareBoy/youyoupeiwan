@@ -1,0 +1,134 @@
+.item {
+  box-sizing: border-box;
+  width: 650rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 35rpx;
+  margin: 0 auto;
+  padding: 25rpx;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.itemList {
+  /* width: 100%; */
+}
+
+.index {
+  padding-top: 46rpx;
+}
+
+.IssuerName {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+}
+
+.userInfo {
+  margin-top: 10rpx;
+}
+
+.userInfo text {
+  color: #3f4b55;
+  opacity: 0.5;
+  font-size: 15rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  line-height: 21rpx;
+  margin-right: 10rpx;
+}
+
+.joinTime {
+  margin-top: 10rpx;
+}
+
+.joinTime text:nth-child(1) {
+  width: 20rpx;
+  height: 20rpx;
+  background: rgba(233, 233, 233, 1);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.joinTime text:nth-child(2) {
+  font-size: 15rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #3f4b55;
+  opacity: 0.5;
+  line-height: 21rpx;
+  margin-left: 8rpx;
+  display: inline-block;
+}
+
+.result {
+  position: absolute;
+  right: 25rpx;
+  bottom: 25rpx;
+}
+
+.resultFont {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+}
+
+.price text:nth-child(1) {
+  font-size: 15rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 21rpx;
+}
+
+.price text:nth-child(2) {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 21rpx;
+  margin-left: 8rpx;
+}
+
+.getPhone {
+  width: 116rpx;
+  height: 40rpx;
+  border-radius: 16px;
+  border: 1px solid rgba(159, 165, 170, 1);
+  font-size: 15rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 21rpx;
+  padding: 10rpx 13rpx 9rpx 13rpx;
+}
+
+.closeUserId text:nth-child(1) {
+  display: block;
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+}
+
+.closeUserId text:nth-child(2) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 28rpx;
+}
+
+.getMoneyState {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+}

@@ -1,0 +1,49 @@
+<view class='index'>
+  <image class="bground" src="../../../assets/images/bg@2x.png"></image>
+  <view class="content">
+    <view class="Edit row" catchtap="isEditStatus">
+      <text>编辑</text>
+    </view>
+    <view class="gameType">
+      <text class="title">游戏名称</text>
+      <view class="gameList row">
+        <block wx:for="{{gameList}}" wx:key="{{item.cateId}}">
+          <view class="gameItem row {{gameIndex==item.cateId?'isClickgame':'noClickgame'}}" data-index="{{index}}" catchtap="checkgame">
+            <text style="{{gameIndex==item.cateId?'color:#FFFFFF':'color:#9FA5AA'}}">{{item.cateName}}</text>
+            <image class="delate" src="../../../assets/images/Delete2@2x.png" wx:if="{{isEdit}}"></image>
+          </view>
+        </block>
+        <view class="gameItem row bgAdd" catchtap="addGame" wx:if="{{isEdit}}" catchtap="addGame">
+          <text>创建游戏</text>
+        </view>
+      </view>
+    </view>
+    <view class="gameType ">
+      <text class="title ">游戏等级</text>
+      <view class="gameList row ">
+        <block wx:for="{{GradeList}}" wx:key="{{item.cateId}}">
+          <view class="gameItem row {{gradeIndex==item.cateId? 'isClickgame': 'noClickgame'}} " data-index="{{index}}" catchtap="checkGrade">
+            <text style="{{gradeIndex==item.cateId? 'color:#FFFFFF': 'color:#9FA5AA'}} ">{{item.cateName}}</text>
+            <image class="delate" src="../../../assets/images/Delete2@2x.png" wx:if="{{isEdit}}"></image>
+          </view>
+        </block>
+        <view class="gameItem row bgAdd" catchtap="openGradeAdd" wx:if="{{isEdit}}">
+          <text>创建等级</text>
+        </view>
+      </view>
+    </view>
+    <view class="noGame column " catchtap="addGame" wx:if="{{gameList.length===0}}">
+      <text>还没有任何游戏赶紧添加吧！</text>
+    </view>
+
+  </view>
+  <picker-bottom height="550rpx" id="popBottom">
+    <view class="grade_popup column">
+      <text class="PopTitle">请输入段位</text>
+      <input placeholder="请输入需要添加的段位" bindblur="getValue"></input>
+      <view class="addGradeBtn row" catchtap="addGradeName">
+        <text>确认</text>
+      </view>
+    </view>
+  </picker-bottom>
+</view>

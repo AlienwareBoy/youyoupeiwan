@@ -1,0 +1,30 @@
+<view class='index'>
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="announcement row">
+    <view class="announcementicon ">
+      <text class="iconfont icongonggao"></text>
+      <text>公告</text>
+    </view>
+    <view class="announcementList ">
+      <swiper class="announcementSwiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" vertical="{{true}}" interval="2000" duration="1000">
+        <block wx:for="5" wx:key="{{index}}">
+          <swiper-item>
+            <text class="announcementFont">215615</text>
+          </swiper-item>
+          <swiper-item>
+            <text class="announcementFont">是地方撒地方</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="Introduction"></view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "mini-input": "../../../component/input/input"
+  }
+}

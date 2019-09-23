@@ -1,0 +1,23 @@
+/**app.wxss**/
+@import './assets/iconfont/iconfont.wxss';
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+button{
+  background: none;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+button::after {
+  border: none;
+}

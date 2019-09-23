@@ -1,0 +1,125 @@
+.bground {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.index {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+.content {
+  position: relative;
+  z-index: 501;
+  margin: 0 50rpx;
+  padding-top: 26rpx;
+}
+
+.createGame {
+  font-size: 60rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 84rpx;
+  text-align: center;
+}
+
+.gameName {
+  margin-top: 58rpx;
+}
+
+.gameName input {
+  width: 525rpx;
+  border-bottom: 3rpx solid #b3dee7;
+  text-align: center;
+  padding-bottom: 15rpx;
+}
+
+.gameGrade {
+  margin-top: 60rpx;
+}
+
+.gameGrade .note {
+  width: 525rpx;
+  height: 253rpx;
+  border-radius: 10px;
+  border: 5rpx solid rgba(179, 222, 231, 1);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.gameGrade textarea {
+  width: 525rpx;
+  height: 253rpx;
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}
+
+.note text:nth-child(2) {
+  font-size: 20rpx;
+  color: rgba(63, 75, 85, 0.5);
+}
+
+.note text:nth-child(1) {
+  font-size: 30rpx;
+  color: rgba(63, 75, 85, 1);
+  display: block;
+}
+
+.upload {
+  margin-top: 60rpx;
+}
+
+.uploadNote {
+  width: 250rpx;
+  height: 250rpx;
+  background: linear-gradient(180deg, rgba(210, 241, 255, 1) 0%, rgba(207, 234, 255, 1) 100%);
+  border-radius: 25rpx;
+  justify-content: center;
+}
+
+.uploadNote text:nth-child(1) {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 36rpx;
+  display: block;
+}
+
+.uploadNote text:nth-child(2) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 28rpx;
+}
+
+.sumbit {
+  justify-content: center;
+  width: 525rpx;
+  height: 95rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 10rpx;
+  margin-top: 160rpx;
+}
+
+.sumbit text {
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 56rpx;
+}
+
+.gameIcon {
+  width: 250rpx;
+  height: 250rpx;
+  background: linear-gradient(180deg, rgba(210, 241, 255, 1) 0%, rgba(207, 234, 255, 1) 100%);
+  border-radius: 25rpx;
+}

@@ -1,0 +1,208 @@
+/* superAdmin/pages/userManagement/userManagement.wxss */
+
+.index {
+  margin: 0 50rpx;
+  padding-top: 46rpx;
+}
+
+.up {
+  width: 0;
+  height: 0;
+  border-right: 10rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  border-bottom: 10rpx solid #3f4b55;
+}
+
+.itemList {
+  margin-top: 30rpx;
+}
+
+.search {
+  justify-content: flex-start;
+  margin-top: 30rpx;
+}
+
+.date {
+  margin-right: 29rpx;
+  position: relative;
+  height: 60rpx;
+  justify-content: space-between;
+}
+
+.searchText {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  letter-spacing: 1rpx;
+}
+
+.border {
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 10rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 5rpx;
+  display: block;
+}
+
+.down {
+  width: 0;
+  height: 0;
+  border-right: 10rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  border-top: 10rpx solid #3f4b55;
+  margin-top: 5rpx;
+}
+
+.searchDate {
+  margin-left: 10rpx;
+  height: 42rpx;
+  position: relative;
+  justify-content: center;
+}
+
+.item {
+  height: 131rpx;
+  border-bottom: 1rpx solid #d8d8d8;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.options {
+  text-align: right;
+  font-size: 63rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+}
+
+.userImage {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+}
+
+.userInfo {
+  align-items: flex-start;
+  margin-left: 10rpx;
+  height: 100%;
+  margin-bottom: 20rpx;
+}
+
+.userName {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+}
+
+.money text {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 28rpx;
+}
+
+.money text:nth-child(2) {
+  margin-left: 20rpx;
+}
+
+.joinTime {
+  font-size: 18rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 25rpx;
+  margin-top: 10rpx;
+}
+
+.PopupCenter {
+  margin-top: 50rpx;
+}
+
+.userAvater {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  background: #ccc;
+}
+
+.userName {
+  font-size: 25rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 36rpx;
+  margin-top: 15rpx;
+}
+
+.function {
+  margin: 40rpx 0rpx 90rpx 0rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 28rpx;
+}
+
+.checkInput {
+  border-bottom: 3rpx solid #b3dee7;
+  width: 525rpx;
+  text-align: center;
+}
+
+.moneyCheck {
+  width: 525rpx;
+  height: 95rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 10rpx;
+  margin-top: 90rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 95rpx;
+}
+.check{
+  width: 50%;
+  text-align: center;
+}
+.check text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.check text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-left: 20rpx;
+}
+
+.checkGround {
+  width: 400rpx;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 200rpx;
+}
+
+.noClick {
+  background: fff;
+  border: 5rpx solid #B3DEE7;
+}
+
+.isClick {
+  background: rgba(63, 75, 85, 1);
+  border: 5rpx solid #B3DEE7;
+}

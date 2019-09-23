@@ -1,0 +1,184 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enhance": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.2",
+	"appid": "wxd446f43a6a08e559",
+	"projectname": "%E5%8F%8B%E5%8F%8B%E4%BC%B4%E7%8E%A9",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 16,
+			"list": [
+				{
+					"id": 0,
+					"name": "订单广场",
+					"pathName": "pages/orderSquare/orderSquare",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的团队",
+					"pathName": "pages/myTeam/myTeam",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "金额管理",
+					"pathName": "pages/moneyManagement/moneyManagement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "管理员订单管理",
+					"pathName": "superAdmin/pages/orderManagement/orderManagement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/userManager/userManager",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/registered/registered",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "订单中心",
+					"pathName": "pages/orderCenter/orderCenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发帖",
+					"pathName": "pages/Posting/Posting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员收款码",
+					"pathName": "pages/UserCode/UserCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户编辑资料",
+					"pathName": "pages/userInfo/userInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "发帖中心(发帖人)",
+					"pathName": "pages/PostingSquare/PostingSquare",
+					"query": "status=10",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "游戏管理",
+					"pathName": "superAdmin/pages/gameManagement/gameManagement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户管理",
+					"pathName": "pages/userManager/userManager",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "超管用户管理",
+					"pathName": "superAdmin/pages/userManagement/userManagement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "添加游戏",
+					"pathName": "superAdmin/pages/addGame/addGame",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "订单详情",
+					"pathName": "pages/orderDetails/orderDetails",
+					"query": "id=8bb0810c2eb94dd5990391a4cff02f9e&isSeeJoiner=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "管理员历史",
+					"pathName": "superAdmin/pages/userHistory/userHistory",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

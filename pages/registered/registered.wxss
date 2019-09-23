@@ -1,0 +1,148 @@
+.entry {
+  padding-top: 95rpx;
+  position: relative;
+}
+
+.bground {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.relcom {
+  width: 525rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 95rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  justify-content: center;
+}
+
+.relBtn {
+  width: 100%;
+  padding-top: 337rpx;
+}
+
+.loginCol {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+}
+
+.loginCol text {
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #fff;
+  line-height: 56rpx;
+}
+
+.overColor {
+  background: rgba(63, 75, 85, 1);
+}
+
+.overColor text {
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.p3 {
+  padding-top: 79rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+  z-index: 501;
+}
+
+.checkGender {
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 94rpx;
+}
+
+.ComSex text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ComSex text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 42rpx;
+  margin-left: 6rpx;
+}
+
+.logining {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 501;
+}
+
+.logining .loginTitle {
+  font-size: 70rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 98rpx;
+}
+
+.logining input {
+  border-bottom: 3px solid #b3dee7;
+  width: 525rpx;
+  height: 5rpx;
+  text-align: center;
+  padding-bottom: 15rpx;
+  margin: 0 auto;
+}
+
+.logining input {
+  margin-top: 45rpx;
+}
+.collectionCode {
+  width: 525rpx;
+  height: 525rpx;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(210, 241, 255, 1) 0%, rgba(207, 234, 255, 1) 100%);
+  border-radius: 25rpx;
+  margin-top: 90rpx;
+}
+
+.avatarUrl {
+  border-radius: 25rpx;
+  width: 525rpx;
+  height: 525rpx;
+}
+
+.introduceCode {
+  justify-content: center;
+  height: 100%;
+}
+
+.introduceCode text {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 42rpx;
+}
+
+.introduceCode text:nth-child(2) {
+  margin-top: 5rpx;
+}
+
+.noClick {
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}
+
+.isClick {
+  background: rgba(63, 75, 85, 1);
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}

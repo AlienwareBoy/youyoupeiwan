@@ -1,0 +1,26 @@
+<view class='index'>
+  <image class="bground" src="../../../assets/images/bg@2x.png"></image>
+  <view class="content column">
+    <text class="createGame">创建游戏</text>
+    <view class="gameName">
+      <input data-type='cateName' placeholder-class="" placeholder="请输入游戏名" bindblur='getValue'></input>
+    </view>
+    <view class="gameGrade">
+      <view class="note column" wx:if="{{!isShowTextarea}}" catchtap="showTexttarea">
+        <text>请输入游戏等级</text>
+        <text>（按低到高的顺序填写，每个等级请用英文逗号分割）</text>
+      </view>
+      <textarea data-type='parentName' bindblur='getValue' wx:else></textarea>
+    </view>
+    <view class="upload" catchtap="uploadImage" catchtap="uploadImage">
+      <image class="gameIcon" src="{{form.cateUrl}}" wx:if="{{form.cateUrl!==''}}"></image>
+      <view class="uploadNote column" wx:else>
+        <text>点击上传游戏头像</text>
+        <text>上传后无法修改</text>
+      </view>
+    </view>
+    <view class="sumbit row" catchtap="createGame">
+      <text>提交</text>
+    </view>
+  </view>
+</view>

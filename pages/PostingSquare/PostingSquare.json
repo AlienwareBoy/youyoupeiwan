@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "帖子中心",
+  "usingComponents": {
+    "mini-input": "../../component/input/input"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "帖子中心",
+  "usingComponents": {
+    "mask": "../../component/Mask/Mask"
+  }
+}

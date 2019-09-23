@@ -1,0 +1,233 @@
+.Features {
+  height: 199rpx;
+  background: #279bff;
+  border-radius: 35rpx;
+  justify-content: space-around;
+  position: relative;
+  padding: 0 30rpx;
+}
+
+.index {
+  margin: 0 50rpx;
+  padding-top: 66rpx;
+}
+
+.moneyManage text:nth-child(1) {
+  display: block;
+  font-size: 50rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.moneyManage text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #fff;
+}
+
+.line {
+  width: 5rpx;
+  height: 93rpx;
+  background: rgba(242, 242, 242, 1);
+  border-radius: 3rpx;
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 50%为自身尺寸的一半 */
+}
+
+.withdraw .icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.withdraw text:nth-child(2) {
+  margin-top: 5rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: #fff;
+  line-height: 42rpx;
+}
+
+.orderList {
+  margin-top: 50rpx;
+}
+
+.search {
+  justify-content: space-between;
+}
+
+.bills text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bills text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  margin-left: 6rpx;
+}
+
+.allBills text:nth-child(1) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 28rpx;
+}
+
+.itemList {
+  margin-top: 30rpx;
+}
+
+.item {
+  position: relative;
+  border-bottom: 1rpx solid #d8d8d8;
+  padding-bottom: 26rpx;
+  margin-bottom: 30rpx;
+}
+
+.item image {
+  width: 50rpx;
+  height: 50rpx;
+  background: rgba(216, 216, 216, 1);
+  border-radius: 10rpx;
+}
+
+.time {
+  align-items: flex-start;
+  margin-left: 15rpx;
+}
+
+.item text:nth-child(1) {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 28rpx;
+}
+
+.item text:nth-child(2) {
+  font-size: 15rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 21rpx;
+  margin-top: 5rpx;
+}
+
+.Amount {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 1);
+  line-height: 42rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+}
+
+.Popup {
+  position: fixed;
+  left: 0rpx;
+  width: 100%;
+  height: 361rpx;
+  bottom: -361rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 5rpx 10rpx 0px rgba(0, 0, 0, 0.2);
+  z-index: 511;
+  transition: bottom 0.2s ease;
+}
+
+.PopupShow {
+  bottom: 0rpx;
+}
+
+.PopupClose {
+  bottom: -362rpx;
+}
+
+.PopupTitle {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgb(10, 8, 8);
+  line-height: 42rpx;
+  width: 100%;
+  margin: 50rpx auto;
+  display: block;
+  text-align: center;
+}
+
+.priceList {
+  justify-content: space-around;
+  margin: 0 80rpx;
+}
+
+.priceChoice text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.nochoice {
+  border: 5rpx solid #b3dee7;
+}
+
+.choice {
+  background: rgba(63, 75, 85, 1);
+  border: 5rpx solid #B3DEE7;
+}
+
+.priceChoice text:nth-child(2) {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(63, 75, 85, 0.5);
+  line-height: 42rpx;
+  margin-left: 15rpx;
+}
+
+.confirm {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #000;
+}
+
+.confirmBtn {
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 299rpx;
+  height: 100rpx;
+  background: rgba(63, 75, 85, 1);
+  font-size: 40rpx;
+  font-family: PingFangSC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.choiceBg {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+}
+
+.nochoiceBg {
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  opacity: 0.5;
+}
