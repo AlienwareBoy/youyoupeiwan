@@ -2,6 +2,7 @@ import {
   Toast
 } from './miniappPromise.js';
 let $ajax = {
+  time:0,
   header: {
     "content-type": "application/json"
   },
@@ -32,7 +33,8 @@ let $ajax = {
           }
         },
         fail(err) {
-          console.log('err',err)
+          console.log('',err)
+          Toast('服务器连接超时，请稍后再试')
           wx.hideLoading()
           reject(err);
         }

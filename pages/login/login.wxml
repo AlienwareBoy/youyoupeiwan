@@ -4,7 +4,7 @@
       <swiper-item catchtouchmove='LoginMove'>
         <view class="P1">
           <image class="bground" src="../../assets/images/bg@2x.png"></image>
-          <image class="bg" src="../../assets/images/bg_game@2x.png"></image>
+          <image class="bg" src="../../assets/images/bg_logo@2x.png"></image>
           <view class="Introduction">
             <text>你好鸭!</text>
             <text>欢迎来到友友伴玩，这里</text>
