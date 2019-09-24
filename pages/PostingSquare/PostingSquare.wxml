@@ -29,7 +29,7 @@
                     </view>
                   </view>
                   <view class="fiexedMoney">
-                    <text>{{item.price}} {{itemList.length}}</text>
+                    <text>{{item.price}}</text>
                     <text>友友币</text>
                   </view>
                 </view>
