@@ -60,7 +60,7 @@ Page({
     // this.savaCanvas()
     setTimeout(() => {
       this.userInfo();
-    },1000)
+    }, 1000)
   },
   closeMask(e) {
     setTimeout(() => {
@@ -91,7 +91,7 @@ Page({
 
   },
   userInfo() {
-    $ajax.post(mine).then(res => {
+    $ajax.post(`${mine}?token=${wx.getStorageSync('token')}`).then(res => {
       console.log(res.data.data)
       this.permissions(String(res.data.data.userType))
       this.setData({

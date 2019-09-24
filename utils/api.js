@@ -1,11 +1,11 @@
-const https = 'http://47.100.119.84:35152';
-const token = wx.getStorageSync('token');
+const https = 'http://118.31.102.106:9117';
+let token = wx.getStorageSync('token');
 let export_defalut = module.exports;
 export_defalut.login = https + '/wx/login'; //登录
 export_defalut.register = https + '/wx/register'; //注册
 export_defalut.auth = https + '/wx/auth'; //授权
 export_defalut.imgUpload = https + `/resource/imgUpload`; //上传文件
-export_defalut.mine = https + `/user/mine?token=${token}`; //我的
+export_defalut.mine = https + `/user/mine`; //我的
 export_defalut.scene = https + `/user/scene?token=${token}`; //获取二维码
 export_defalut.getSceneId = https + `/user/wx/scene`; //获取二维码参数
 export_defalut.productPost = https + `/post/productPost?token=${token}`; //用户发帖

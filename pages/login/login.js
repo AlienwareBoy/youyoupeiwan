@@ -130,9 +130,10 @@ Page({
         password,
       }).then(res => {
         wx.setStorageSync('userObj', res.data.data)
+        console.log(res.data.data.token)
         wx.setStorageSync('token', res.data.data.token)
         wx.switchTab({
-          url: '../userManager/userManager',
+          url: `../userManager/userManager`,
         })
       })
     } else {

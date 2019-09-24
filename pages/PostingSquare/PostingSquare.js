@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentIndex: '',
     isSeeJoiner: true,
     // swiperIndex: 0,
     clickIndex: 0,
@@ -38,15 +39,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getData();
+    this.getData(this.data.form);
   },
-  getData() {
-    $ajax.post(postCenter, this.data.form).then(res => {
+  getData(form) {
+    $ajax.post(postCenter, form).then(res => {
       console.log(res)
       this.setData({
         itemList: res.data.data
       })
-      console.log(this.data.itemList)
     })
   },
   toDetails(e) {
@@ -55,18 +55,38 @@ Page({
     })
   },
   changeClickIndex(e) {
-    console.log(e.detail.source)
+    let status = 10;
+    let clickIndex = this.data.clickIndex;
+    switch (e.detail.current) {
+      case 0:
+        status = 10;
+        break;
+      case 1:
+        status = 12;
+        break;
+      case 2:
+        status = 14;
+        break;
+      case 3:
+        status = 0;
+        break;
+    }
+    this.data.form.status = status;
     this.setData({
-      clickIndex: e.detail.source
+      clickIndex:e.detail.current
     })
+    this.getData(this.data.form);
   },
   choiceDots(e) {
-    console.log(e.currentTarget.dataset.index)
+    let {
+      index,
+      status
+    } = e.currentTarget.dataset;
     this.setData({
-      'form.status': e.currentTarget.dataset.status,
-      clickIndex: e.currentTarget.dataset.index,
-      // swiperIndex: e.currentTarget.dataset.index,
+      'form.status': status,
+      clickIndex: index,
     })
-    this.getData()
+    this.data.form.status=status;
+    this.getData(this.data.form)
   },
 })

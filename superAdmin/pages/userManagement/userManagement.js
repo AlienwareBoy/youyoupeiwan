@@ -109,6 +109,14 @@ Page({
   onLoad: function(options) {
     this.getData();
   },
+  getData() {
+    let api = usermanage;
+    $ajax.post(api, this.data.form).then(res => {
+      this.setData({
+        itemList: res.data.data
+      })
+    })
+  },
   checkUserSeal() {
     let str = `${this.data.year}-${this.data.month}-${this.data.day}`
     let date = new Date(str);
@@ -136,13 +144,7 @@ Page({
     })
     this.getData();
   },
-  getData() {
-    $ajax.post(usermanage, this.data.form).then(res => {
-      this.setData({
-        itemList: res.data.data
-      })
-    })
-  },
+
   checkboxChange: function(e) {
     let list = this.data.nowList.push(...e.detail.value);
     let list2 = this.data.PermissionList;

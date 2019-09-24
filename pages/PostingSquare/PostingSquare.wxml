@@ -9,64 +9,63 @@
       </block>
     </view>
     <view class="orderList">
-      <swiper circular="{{true}}" style="height:100%;" bindchange='changeClickIndex'>
-        <block wx:for="{{itemList}}" wx:key="{{index}}">
+      <swiper circular="{{true}}" current="{{currentIndex}}" style="height:100%;"  bindchange='changeClickIndex'>
+        <block wx:for="{{DotsList}}" wx:key="{{index}}">
           <swiper-item class='swiperItem'>
             <scroll-view scroll-y class="scrollViewStyle">
-              <view class="orderItem" data-id="{{item.postId}}" catchtap="toDetails">
-                <view class="fixedBorder">
-                  <view class="fiexLeft">
-                    <text class="gameName">{{item.cateName}}·{{item.level}}</text>
-                    <view class="userInfo row">
-                      <text wx:if="{{item.gender===1}}">男</text>
-                      <text wx:else>女</text>
-                      <text>{{item.age}}</text>
-                      <text>{{item.cateName}}</text>
+              <block wx:for="{{itemList}}">
+                <view class="orderItem" data-id="{{item.postId}}" catchtap="toDetails">
+                  <view class="fixedBorder">
+                    <view class="fiexLeft">
+                      <text class="gameName">{{item.cateName}}·{{item.level}}</text>
+                      <view class="userInfo row">
+                        <text wx:if="{{item.gender===1}}">男</text>
+                        <text wx:else>女</text>
+                        <text>{{item.age}}</text>
+                        <text>{{item.cateName}}</text>
+                      </view>
+                      <view class="dataStyle row">
+                        <text class="borderStyle"></text>
+                        <text class="orderDate">日期：{{item.createTime}}</text>
+                      </view>
                     </view>
-                    <view class="dataStyle row">
-                      <text class="borderStyle"></text>
-                      <text class="orderDate">日期：{{item.createTime}}</text>
+                    <view class="fiexedMoney">
+                      <text>{{item.price}}</text>
+                      <text>友友币</text>
                     </view>
                   </view>
-                  <view class="fiexedMoney">
-                    <text>{{item.price}}</text>
-                    <text>友友币</text>
-                  </view>
-                </view>
-                <view class="changeBorder">
-                  <view class="changeState_ing" wx:if="{{form.status===10}}">
-                    <view class="dataStyle row">
-                      <text class="borderStyle"></text>
-                      <text class="orderDate">目前抢单人数:{{item.ulist.length}}</text>
-                    </view>
-                    <view class="itemList">
-                      <block wx:for="{{item.ulist}}" wx:for-index="index2" wx:for-item="item2" wx:key="{{item.postId}}">
-                        <view class="item row">
-                          <image class="userAvater" src="{{item2.headImg}}"></image>
-                          <view class="joinInfo column">
-                            <text class="joinName">{{item2.userName}}</text>
-                            <view class="dataStyle row">
-                              <text class="borderStyle"></text>
-                              <text class="orderDate">日期：{{item2.createTime}}</text>
+                  <view class="changeBorder">
+                    <view class="changeState_ing" wx:if="{{form.status===10}}">
+                      <view class="dataStyle row">
+                        <text class="borderStyle"></text>
+                        <text class="orderDate" wx:if="{{item.ulist.length>0}}">目前抢单人数:{{item.ulist.length}}</text>
+                        <text class="orderDate" wx:else>暂无人抢单</text>
+                      </view>
+                      <view class="itemList">
+                        <block wx:for="{{item.ulist}}" wx:for-index="index2" wx:for-item="item2" wx:key="{{item.postId}}">
+                          <view class="item row">
+                            <image class="userAvater" src="{{item2.headImg}}"></image>
+                            <view class="joinInfo column">
+                              <text class="joinName">{{item2.userName}}</text>
+                              <view class="dataStyle row">
+                                <text class="borderStyle"></text>
+                                <text class="orderDate">日期：{{item2.createTime}}</text>
+                              </view>
                             </view>
                           </view>
-                        </view>
-                      </block>
+                        </block>
 
+                      </view>
                     </view>
-                  </view>
-                  <!-- <view class="changeState_call"></view>
+                    <!-- <view class="changeState_call"></view>
                 <view class="changeState_success"></view>
                 <view class="changeState_all"></view> -->
+                  </view>
                 </view>
-              </view>
-
+              </block>
             </scroll-view>
-
           </swiper-item>
         </block>
-
-
       </swiper>
       <!-- <swiper-item class='swiperItem'>
           <scroll-view scroll-y class="scrollViewStyle">
