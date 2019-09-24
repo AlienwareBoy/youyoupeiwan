@@ -95,7 +95,6 @@ Page({
       console.log(res.data.data)
       this.permissions(String(res.data.data.userType))
       this.setData({
-        userInfo: wx.getStorageSync('userInfo'),
         nowUser: res.data.data
       })
     })

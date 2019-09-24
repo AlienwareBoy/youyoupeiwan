@@ -62,6 +62,7 @@
   box-shadow: 0px 2px 10px 0px rgba(42, 158, 255, 0.18);
   border-radius: 30rpx;
   margin: 20rpx 30rpx 0rpx 30rpx;
+  position: relative;
 }
 
 .userInfo {
@@ -162,7 +163,7 @@
 .fiexedMoney {
   position: absolute;
   right: 50rpx;
-  top: 62rpx;
+  top: 25rpx;
 }
 
 .fiexedMoney text:nth-child(1) {
@@ -171,6 +172,8 @@
   font-weight: 600;
   color: rgba(63, 75, 85, 1);
   line-height: 70rpx;
+  text-align: center;
+  display: block;
 }
 
 .fiexedMoney text:nth-child(2) {
