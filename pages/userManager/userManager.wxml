@@ -3,7 +3,7 @@
     <image class="leftBg comColr" src='../../assets/images/Hompage_decoration2@2x.png'></image>
     <view class="header">
       <image class="userInfo" src="../../assets/images/Hompage_decoration3@2x.png"></image>
-      <image class="userAvater" src="{{userInfo.avatarUrl}}"></image>
+      <image class="userAvater" src="{{nowUser.headImg}}"></image>
       <text class="userName">{{nowUser.userName}}</text>
       <text class="Nameplate">{{userNameplate}}</text>
       <text class="Nameplate idborder">邀请码:{{nowUser.invitationCode}}</text>

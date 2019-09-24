@@ -1,10 +1,25 @@
-// superAdmin/pages/orderManagement/orderManagement.js
+import {
+  $ajax
+} from '../../../utils/request'
+import {
+  postCentreByAdmin
+} from '../../../utils/api'
+import {
+  Model,
+  Toast
+} from '../../../utils/miniappPromise.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    form: {
+      "status": 0,
+      "page": 1,
+      "pageSize": 10,
+      "userName": ""
+    },
     clickIndex: 0,
     DotsList: [{
       text: '抢单中'
@@ -21,7 +36,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.getData();
+  },
+  getData() {
+    console.log(postCentreByAdmin)
+    $ajax.post(postCentreByAdmin, this.data.form).then(res => {
+      console.log(res)
+      this.setData({
+        itemList: res.data.data
+      })
+      console.log(this.data.itemList)
+    })
   },
   choiceDots(e) {
     this.setData({

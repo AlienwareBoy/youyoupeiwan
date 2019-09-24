@@ -71,25 +71,25 @@ Page({
     })
   },
   review() {
-    let type = thisd.data.ModelType; ///1充值  2提现
+    let type = this.data.ModelType; ///1充值  2提现
     if (!this.data.num) {
       Toast('请选择提现金额')
     } else {
       let title = type === 1 ? '确认充值' : '确认提现';
       let content = type === 1 ? `确认充值${this.data.num}元?` : `确认提现${this.data.num}元?`
       Model(title, content).then(res => {
-        type === 1 ? this.setMoney(this.data.num) : this.getMoney(this.data.num);
+        type === 1 ? this.setMoney(this.data.num) : this.putMoney(this.data.num);
         this.closeMask()
       })
     }
   },
   setMoney(price) {
-    $ajax.post(optionPayLog, price).then(res => {
+    $ajax.post(optionPayLog, { price}).then(res => {
       Toast('已发送充值提醒')
     })
   },
-  getMoney(price) {
-    $ajax.post(extractPayLog, price).then(res => {
+  putMoney(price) {
+    $ajax.post(extractPayLog, { price}).then(res => {
       Toast('已发送提现提醒')
     })
   },

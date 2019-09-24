@@ -1,5 +1,5 @@
 <view class='index'>
-  <mini-input></mini-input>
+  <mini-input placeholder="请输入姓名查询" bind:getValue="getValue"></mini-input>
   <view class="itemList">
     <block wx:for="{{itemList}}">
       <view class="item row">
@@ -15,31 +15,69 @@
           </view>
           <text class="joinTime">{{item.createTime}}</text>
         </view>
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="row userStatus" wx:if="{{item.isfor==1}}">
+          <text>封</text>
+        </view>
+        <picker data-index="{{index}}" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
           <text class="options iconfont icon-sangedian"></text>
         </picker>
       </view>
     </block>
   </view>
-  <picker-bottom>
+  <picker-bottom id="userGrade">
     <view class="userGradeOptions">
-      <view class="">
-        <text>用户等级</text>
-        <view class="userLevel">
-          <view class="levelItem">
-            <text></text>
-            <text>用户</text>
-          </view>
-          <view class="levelItem">
-            <text></text>
-            <text>会员</text>
-          </view>
-          <view class="levelItem">
-            <text></text>
-            <text>超管</text>
-          </view>
+      <view class="column">
+        <text class="GradeTitle app-fz-30 weight">用户等级</text>
+        <view class="userLevel row">
+          <block wx:for="{{gradeList}}" wx:key="{{index}}">
+            <view class="levelItem row" data-index="{{index}}" catchtap="clickIndex">
+              <text class="{{isClickIndex===index?'isClick':'noClick'}}"></text>
+              <text class="app-fz-20 app-color-333">{{item}}</text>
+            </view>
+          </block>
+        </view>
+        <view class="checkGrade row" catchtap="checkGrade">
+          <text class="app-fz-30 app-color-fff">确定</text>
         </view>
       </view>
     </view>
   </picker-bottom>
+  <picker-bottom id="userType">
+    <view class="userGradeOptions">
+      <view class="column">
+        <text class="GradeTitle app-fz-30 weight">封号处理</text>
+        <view class="userLevel row">
+          <block wx:for="{{operating}}" wx:key="{{index}}">
+            <view class="levelItem row" data-index="{{index}}" catchtap="clickIndex">
+              <text class="{{isClickIndex===index?'isClick':'noClick'}}"></text>
+              <text class="app-fz-20 app-color-333">{{item}}</text>
+            </view>
+          </block>
+        </view>
+
+        <view class="endTimeInput"  wx:if="{{isClickIndex===0}}" catchtap="getTime">
+          <text wx:if="{{endTime===''}}">请选择封号截止时间</text>
+          <text wx:else>{{endTime}}</text>
+        </view>
+        <textarea class="reason" placeholder="请输入封号原因" bindblur="getReason" wx:if="{{isClickIndex===0}}"></textarea>
+        <view class="checkGrade otherStyle row" data-index="{{index}}" catchtap="checkType">
+          <text class="app-fz-30 app-color-fff" catchtap="checkUserSeal">确定</text>
+        </view>
+      </view>
+    </view>
+  </picker-bottom>
+  <picker-bottom id='TimeChoice'>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view class='column' wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class='column' wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class='column' wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+  </picker-bottom>
+
 </view>.

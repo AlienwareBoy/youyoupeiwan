@@ -31,3 +31,8 @@ export_defalut.usermanage = https + `/user/usermanage?token=${token}`; //用户�
 export_defalut.usermanage = https + `/user/usermanage?token=${token}`; //用户管理
 export_defalut.optionPayLogHistory = https + `/comm/optionPayLogHistory?token=${token}`; //充值历史
 export_defalut.extractPayLogHistory = https + `/comm/extractPayLogHistory?token=${token}`; //充值历史
+export_defalut.agreeApply = https + `/comm/agreeApply?token=${token}`; //操作充值提现按钮
+export_defalut.editSecuery = https + `/user/editSecuery?token=${token}`; //修改用户权限
+export_defalut.getEndTime = https + `/user/getEndTime?token=${token}`; //提前解封
+export_defalut.userTitle = https + `/user/userTitle?token=${token}`; //封号
+export_defalut.postCentreByAdmin = https + `/post/postCentreByAdmin?token=${token}`; //订单管理

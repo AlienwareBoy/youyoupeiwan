@@ -17,6 +17,7 @@
   left: 0rpx;
   z-index: 501;
   transition: bottom 0.2s ease;
+  padding-bottom: 30rpx;
 }
 
 .showPopup {

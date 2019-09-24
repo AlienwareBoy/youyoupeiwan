@@ -43,13 +43,25 @@ button::after {
 .app-color-0005 {
   color: rgba(63, 75, 85, 0.5);
 }
-
+.app-color-fff{
+  color: #fff;
+}
 .app-mal-15 {
   margin-left: 15rpx;
 }
+
 .app-mab-10 {
   margin-bottom: 10rpx;
 }
+
 .app-mab-20 {
   margin-bottom: 20rpx;
+}
+
+.app-mat-30 {
+  margin-top: 30rpx;
+}
+
+.weight {
+  font-weight: 600;
 }

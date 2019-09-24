@@ -60,7 +60,7 @@ Page({
     // this.savaCanvas()
     setTimeout(() => {
       this.userInfo();
-    })
+    },1000)
   },
   closeMask(e) {
     setTimeout(() => {

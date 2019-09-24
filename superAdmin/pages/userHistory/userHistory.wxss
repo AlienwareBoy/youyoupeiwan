@@ -34,24 +34,42 @@
 .icon {
   width: 50rpx;
   height: 50rpx;
-  background: #000;
 }
-.iconBorder{
+
+.iconBorder {
   height: 100%;
   position: absolute;
   left: 0rpx;
   top: 0rpx;
 }
-.itemFont{
+
+.itemFont {
   align-items: flex-start;
   margin-left: 65rpx;
 }
-.item{
+
+.item {
   position: relative;
   border-bottom: 2rpx solid #d8d8d8;
 }
-.price{
+
+.price {
   position: absolute;
   right: 0rpx;
   top: 0rpx;
+}
+
+.checkoperatingBtn {
+  justify-content: center;
+  width: 120rpx;
+  height: 45rpx;
+  border-radius: 23rpx;
+  border: 2rpx solid #4fcbff;
+  position: absolute;
+  right: 94rpx;
+  top: 10rpx;
+}
+
+.checkoperatingBtn text {
+  color: #279bff;
 }

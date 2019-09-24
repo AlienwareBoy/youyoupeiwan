@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 18,
 			"list": [
 				{
 					"id": 0,
@@ -175,6 +175,13 @@
 					"id": 17,
 					"name": "管理员-充值提现历史",
 					"pathName": "superAdmin/pages/userHistory/userHistory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "管理员-订单管理",
+					"pathName": "superAdmin/pages/orderManagement/orderManagement",
 					"query": "",
 					"scene": null
 				}

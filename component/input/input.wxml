@@ -1,4 +1,4 @@
 <view class="search row">
   <text class="iconfont iconsousuo"></text>
-  <input placeholder="请输入订单号查询" bindblur=""></input>
+  <input placeholder="{{placeholder}}" bind:blur="getReault"></input>
 </view>

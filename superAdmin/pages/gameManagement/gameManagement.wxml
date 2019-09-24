@@ -37,7 +37,7 @@
     </view>
 
   </view>
-  <picker-bottom height="550rpx" id="popBottom">
+  <picker-bottom  id="popBottom">
     <view class="grade_popup column">
       <text class="PopTitle">请输入段位</text>
       <input placeholder="请输入需要添加的段位" bindblur="getValue"></input>

@@ -6,7 +6,7 @@ Component({
   properties: {
     height: {
       type: String,
-      value: '660rpx'
+      value: ''
     }
   },
 

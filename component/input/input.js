@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    placeholder: {
+      type: String,
+      value: '请输入你的查询目标'
+    }
   },
 
   /**
@@ -18,6 +21,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    getReault(e) {
+      this.triggerEvent('getValue', {
+        value: e.detail.value
+      })
+    },
   }
 })

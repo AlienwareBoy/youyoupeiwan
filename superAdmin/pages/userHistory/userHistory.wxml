@@ -2,11 +2,11 @@
   <view class="container">
     <view class="header row">
       <view class="userInfo row">
-        <image></image>
+        <image src="{{formgameManage.userImage}}"></image>
         <text>适当放松的</text>
       </view>
       <view class="usermoney">
-        <text>友友币:1320</text>
+        <text>友友币:{{formgameManage.price}}</text>
       </view>
     </view>
     <view class="header row">
@@ -14,42 +14,41 @@
         <text></text>
         <text class="app-fz-30">充值/提现历史</text>
       </view>
-      <view class="row">
-        <text class="app-fz-20">充值</text>
-        <text class="iconfont icon-small-bottom-arrow"></text>
-      </view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{pickerList}}">
+        <view class="picker">
+          <view class="row">
+            <text class="app-fz-20">{{typeFont}}</text>
+            <text class="iconfont icon-small-bottom-arrow"></text>
+          </view>
+        </view>
+      </picker>
     </view>
     <view class="itemList">
-      <view class="item row app-mab-20">
-        <view class="iconBorder column">
-          <image class="icon" src=""></image>
+      <block wx:for="{{typeList}}" :key="{{item.id}}">
+        <view class="item row app-mab-20">
+          <view class="iconBorder column">
+            <image class="icon" src="../../../assets/images/Money_Recharge2@2x.png" wx:if="{{operating===0}}"></image>
+            <image class="icon" src="../../../assets/images/Money_Recharge2@2x.png" wx:if="{{operating===1}}"></image>
+          </view>
+          <view class="itemFont column app-mal-15">
+            <text class="app-fz-20 app-color-0001 app-mab-10 weight" wx:if="{{item.status===10&&operating===0}}">发起充值申请</text>
+            <text class="app-fz-20 app-color-0001 app-mab-10 weight" wx:if="{{item.status===12&&operating===0}}">充值成功</text>
+            <text class="app-fz-20 app-color-0001 app-mab-10 weight" wx:if="{{item.status===10&&operating===1}}">发起提现申请</text>
+            <text class="app-fz-20 app-color-0001 app-mab-10 weight" wx:if="{{item.status===12&&operating===1}}">提现成功</text>
+            <text class="app-fz-20 app-color-0005 app-mab-10">发起提现日期：{{item.createTime}}</text>
+            <text class="app-fz-20 app-color-0005 app-mab-10" wx:if="{{item.optionTine!==''}}">申请通过日期：{{item.optionTine}}</text>
+            <text class="app-fz-20 app-color-0005 app-mab-10" wx:if="{{item.optionUserNaem!==''}}">审批人：{{item.optionUserNaem}}</text>
+          </view>
+          <view class="checkoperatingBtn row" wx:if="{{item.status===10}}" data-id="{{item.id}}" catchtap="checkOperating">
+            <text class="app-fz-18">确认完成</text>
+          </view>
+          <view class="price column">
+            <text class="app-fz-30 weight" wx:if="{{operating==0}}">+{{item.price}}</text>
+            <text class="app-fz-30 weight" wx:elif="{{operating==1}}">-{{item.price}}</text>
+            <text class="app-fz-20 app-color-0005">友友币</text>
+          </view>
         </view>
-        <view class="itemFont column app-mal-15">
-          <text class="app-fz-20 app-color-0005 app-mab-10">提现成功</text>
-          <text class="app-fz-20 app-color-0005 app-mab-10">发起提现日期：</text>
-          <text class="app-fz-20 app-color-0005 app-mab-10">申请通过日期：</text>
-          <text class="app-fz-20 app-color-0005 app-mab-10">审批人：</text>
-        </view>
-        <view class="price column">
-          <text class="app-fz-30">-200</text>
-          <text class="app-fz-20 app-color-0005">友友币</text>
-        </view>
-      </view>
-<view class="item row app-mab-20">
-        <view class="iconBorder column">
-          <image class="icon" src=""></image>
-        </view>
-        <view class="itemFont column app-mal-15">
-          <text class="app-fz-20 app-color-0005 app-mab-10">提现成功</text>
-          <text class="app-fz-20 app-color-0005 app-mab-10">发起提现日期：</text>
-          <text class="app-fz-20 app-color-0005 app-mab-10">申请通过日期：</text>
-          <text class="app-fz-20 app-color-0005 app-mab-10">审批人：</text>
-        </view>
-        <view class="price column">
-          <text class="app-fz-30">-200</text>
-          <text class="app-fz-20 app-color-0005">友友币</text>
-        </view>
-      </view>
+      </block>
     </view>
   </view>
 

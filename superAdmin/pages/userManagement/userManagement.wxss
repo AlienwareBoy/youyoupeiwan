@@ -170,10 +170,12 @@
   text-align: center;
   line-height: 95rpx;
 }
-.check{
+
+.check {
   width: 50%;
   text-align: center;
 }
+
 .check text:nth-child(1) {
   width: 30rpx;
   height: 30rpx;
@@ -199,10 +201,103 @@
 
 .noClick {
   background: fff;
-  border: 5rpx solid #B3DEE7;
+  border: 5rpx solid #b3dee7;
 }
 
 .isClick {
   background: rgba(63, 75, 85, 1);
-  border: 5rpx solid #B3DEE7;
+  border: 5rpx solid #b3dee7;
+}
+
+.userStatus {
+  width: 90rpx;
+  height: 90rpx;
+  border: 4rpx solid rgba(212, 235, 255, 1);
+  border-radius: 50%;
+  justify-content: center;
+  position: absolute;
+  right: 73rpx;
+  top: 14rpx;
+}
+
+.userStatus text {
+  font-size: 50rpx;
+  font-family: PingFangSC-Semibold, PingFangSC;
+  font-weight: 600;
+  color: rgba(212, 235, 255, 1);
+  line-height: 70rpx;
+}
+
+.levelItem {
+  flex: 1;
+  justify-content: center;
+}
+
+.levelItem text:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.noClick {
+  border: 5rpx solid rgba(179, 222, 231, 1);
+  background: #fff;
+}
+
+.userLevel {
+  padding: 0.5px 25px;
+  margin-top: 50rpx;
+  width: 100%;
+  justify-content: center;
+}
+
+.isClick {
+  background: rgba(63, 75, 85, 1);
+  border: 5rpx solid rgba(179, 222, 231, 1);
+}
+
+.levelItem text:nth-child(2) {
+  margin-left: 20rpx;
+}
+
+.checkGrade {
+  width: 388rpx;
+  height: 93rpx;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
+  justify-content: center;
+  border-radius: 17rpx;
+  margin-top: 58rpx;
+}
+
+.GradeTitle {
+  margin-top: 70rpx;
+}
+
+.checkGrade text {
+}
+
+.endTimeInput {
+  border-bottom: 3rpx solid #b3dee7;
+  padding-bottom: 15rpx;
+  width: 550rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.endTimeInput text{
+  font-size: 20rpx;
+  color: #000;
+}
+.otherStyle {
+  /* position: absolute;
+  bottom: 21rpx;
+  left: 189rpx; */
+}
+
+.reason {
+  width: 484rpx;
+  height: 258rpx;
+  border-radius: 10rpx;
+  border: 5rpx solid rgba(179, 222, 231, 1);
+  margin-top: 20rpx;
 }
