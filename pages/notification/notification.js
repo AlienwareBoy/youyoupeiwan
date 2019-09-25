@@ -1,5 +1,15 @@
+import {
+  $ajax
+} from '../../utils/request'
+import {
+  infoList
+} from '../../utils/api'
 Page({
   data: {
+    form: {
+      page: 1,
+      pageSize: 20,
+    },
     notificationList: [{
       id: 0,
       state: 0,
@@ -106,4 +116,17 @@ Page({
       reallyPrice: ''
     }]
   },
+  onLoad() {
+
+  },
+  onShow() {
+    this.getData(this.data.form);
+  },
+  getData(form) {
+    $ajax.post(infoList, form).then(res => {
+      this.setData({
+        itemList: res.data.data
+      })
+    })
+  }
 })

@@ -135,11 +135,11 @@
   width: 90rpx;
   height: 40rpx;
   border-radius: 20rpx;
-  border: 1rpx solid rgba(159, 165, 170, 1);
+  border: 1rpx solid #279BFF;
   font-size: 15rpx;
   font-family: PingFangSC;
   font-weight: 600;
-  color: rgba(63, 75, 85, 1);
+  color: #279BFF;
   line-height: 21rpx;
   margin-right: 15rpx;
 }

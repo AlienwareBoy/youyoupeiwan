@@ -1,6 +1,6 @@
 <view class='index'>
   <view class="itemList">
-    <block wx:for="{{notificationList}}" wx:key="item.value">
+    <block wx:for="{{itemList}}" wx:key="item.value">
       <view class="item column">
         <text class="IssuerName" wx:if="{{item.state===0}}">{{item.receiverName}}</text>
         <text class="getMoneyState" wx:if="{{item.state===4}}">发起提现</text>

@@ -52,10 +52,7 @@
       }
     ]
   },
-  "networkTimeout": {
-    "request": 5000,
-    "downloadFile": 5000
-  },
+  
   "subpackages": [
     {
       "root": "superAdmin",

@@ -3,7 +3,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
-          <image src="{{item}}" class="slide-image" width="355" height="150" />
+          <image src="{{item.imgUrl}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
@@ -15,16 +15,15 @@
     </view>
     <view class="announcementList ">
       <swiper class="announcementSwiper" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" vertical="{{true}}" interval="2000" duration="1000">
-        <block wx:for="5" wx:key="{{index}}">
+        <block wx:for="{{itemList}}" wx:key="{{index}}">
           <swiper-item>
-            <text class="announcementFont">215615</text>
-          </swiper-item>
-          <swiper-item>
-            <text class="announcementFont">是地方撒地方</text>
+            <text class="announcementFont">{{item.content}}</text>
           </swiper-item>
         </block>
       </swiper>
     </view>
   </view>
-  <view class="Introduction"></view>
+  <view class="Introduction">
+    <image src="../../assets/images/platform introduction@2x.png"></image>
+  </view>
 </view>

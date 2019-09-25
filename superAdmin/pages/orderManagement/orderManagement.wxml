@@ -1,152 +1,95 @@
 <view class='index'>
   <view class="container">
-    <mini-input/>
-    <view class="indicatorDots row">
-      <block wx:for="{{DotsList}}" wx:key="{{index}}">
-        <view class="DotsItem" data-index='{{index}}' catchtap="choiceDots">
-          <text class="{{clickIndex===index?'isClick':'noClick'}}">{{item.text}}</text>
-          <text wx:if="{{clickIndex===index?true:false}}"></text>
+    <mini-input placeholder="请输入账号名查询" bind:getValue="getValue" />
+    <view wx:if="{{!isSearch}}">
+      <view class="indicatorDots row">
+        <block wx:for="{{DotsList}}" wx:key="{{index}}">
+          <view class="DotsItem" data-status='{{item.status}}' catchtap="choiceDots">
+            <text class="{{clickIndex===item.status?'isClick':'noClick'}}">{{item.text}}</text>
+            <text wx:if="{{clickIndex===item.status?true:false}}"></text>
+          </view>
+        </block>
+      </view>
+      <view class="orderList">
+        <swiper circular="{{true}}" current="{{swiperIndex}}" style="height:100%;" bindchange='changeClickIndex'>
+          <block wx:for="{{DotsList}}" wx:key="{{index}}">
+            <swiper-item class='swiperItem'>
+              <scroll-view scroll-y class="scrollViewStyle">
+                <block wx:for="{{itemList}}" wx:key="{{item.postId}}">
+                  <view class="orderItem">
+                    <view class="orderCom">
+                      <text class="orderId">{{item.cateName}}</text>
+                      <view class="userInfo row">
+                        <text>{{item.level}}</text>
+                        <text wx:if="{{item.gender===1}}">男</text>
+                        <text wx:else>女</text>
+                        <text>{{item.age}}</text>
+                        <text>{{item.cateName}}</text>
+                      </view>
+                      <view class="userInfo row">
+                        <text>发帖人:</text>
+                        <text>{{item.postUserName}}</text>
+                      </view>
+                      <view class="userInfo row">
+                        <text class="borderStyle"></text>
+                        <text>目前抢单人数:{{item.number}}</text>
+                      </view>
+                      <view class="userInfo row">
+                        <text class="borderStyle"></text>
+                        <text>日期：{{item.createTime}}</text>
+                      </view>
+                      <view class="price column">
+                        <text>{{item.price}}</text>
+                        <text>友友币</text>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </scroll-view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view v-if="{{isSearch}}">
+      <block wx:for="{{itemList}}" wx:key="{{item.postId}}">
+        <view class="orderItem">
+          <view class="orderCom">
+            <text class="orderId">{{item.cateName}}</text>
+            <view class="userInfo row">
+              <text>{{item.level}}</text>
+              <text wx:if="{{item.gender===1}}">男</text>
+              <text wx:else>女</text>
+              <text>{{item.age}}</text>
+              <text>{{item.cateName}}</text>
+            </view>
+            <view class="userInfo row">
+              <text>发帖人:</text>
+              <text>{{item.postUserName}}</text>
+            </view>
+            <view class="userInfo row">
+              <text class="borderStyle"></text>
+              <text>目前抢单人数:{{item.number}}</text>
+            </view>
+            <view class="userInfo row">
+              <text class="borderStyle"></text>
+              <text>日期：{{item.createTime}}</text>
+            </view>
+            <view class="price column">
+              <text>{{item.price}}</text>
+              <text>友友币</text>
+            </view>
+            <view class="operation row">
+              <view class="commonBtn row">
+                <text>查看订单</text>
+              </view>
+              <view class="commonBtn row">
+                <text>删除订单</text>
+              </view>
+            </view>
+          </view>
         </view>
       </block>
-    </view>
-    <view class="orderList">
-      <swiper circular="{{true}}" current="{{clickIndex}}" style="height:100%;" bindchange='changeClickIndex'>
-        <swiper-item class='swiperItem'>
-          <scroll-view scroll-y class="scrollViewStyle">
-            <view class="orderItem">
-              <view class="orderCom">
-                <text class="orderId">订单号：21090807</text>
-                <view class="userInfo row">
-                  <text>广州</text>
-                  <text>男</text>
-                  <text>23</text>
-                  <text>王者荣耀</text>
-                </view>
-                <view class="userInfo row">
-                  <text>发帖人:</text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>日期：2019-08-28   12:00</text>
-                </view>
-                <view class="price column">
-                  <text>300</text>
-                  <text>友友币</text>
-                </view>
-                <view class="operation row">
-                  <view class="commonBtn row">
-                    <text>查看订单</text>
-                  </view>
-                  <view class="commonBtn row">
-                    <text>删除订单</text>
-                  </view>
-                </view>
-              </view>
-
-            </view>
-          </scroll-view>
-        </swiper-item>
-        <swiper-item class='swiperItem'>
-          <scroll-view scroll-y class="scrollViewStyle">
-            <view class="orderItem">
-              <view class="orderCom">
-                <text class="orderId">订单号：21090807</text>
-                <view class="userInfo row">
-                  <text>·广州</text>
-                  <text>·男</text>
-                  <text>·23</text>
-                  <text>·王者荣耀</text>
-                </view>
-                <view class="userInfo row">
-                  <text>发帖人:</text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>日期：2019-08-28   12:00</text>
-                </view>
-                <view class="price column">
-                  <text>500</text>
-                  <text>友友币</text>
-                </view>
-              </view>
-
-            </view>
-          </scroll-view>
-        </swiper-item>
-        <swiper-item class='swiperItem'>
-          <scroll-view scroll-y class="scrollViewStyle">
-            <view class="orderItem">
-              <view class="orderCom">
-                <text class="orderId">订单号：21090807</text>
-                <view class="userInfo row">
-                  <text>·广州</text>
-                  <text>·男</text>
-                  <text>·23</text>
-                  <text>·王者荣耀</text>
-                </view>
-                <view class="userInfo row">
-                  <text>发帖人:</text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>日期：2019-08-28   12:00</text>
-                </view>
-                <view class="price column">
-                  <text>1230</text>
-                  <text>友友币</text>
-                </view>
-              </view>
-            </view>
-          </scroll-view>
-        </swiper-item>
-        <swiper-item class='swiperItem'>
-          <scroll-view scroll-y class="scrollViewStyle">
-            <view class="orderItem">
-              <view class="orderCom">
-                <text class="orderId">订单号：21090807</text>
-                <view class="userInfo row">
-                  <text>·广州</text>
-                  <text>·男</text>
-                  <text>·23</text>
-                  <text>·王者荣耀</text>
-                </view>
-                <view class="userInfo row">
-                  <text>发帖人:</text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>Frakn</text>
-                </view>
-                <view class="userInfo row">
-                  <text class="borderStyle"></text>
-                  <text>日期：2019-08-28   12:00</text>
-                </view>
-                <view class="price column">
-                  <text>90</text>
-                  <text>友友币</text>
-                </view>
-              </view>
-
-            </view>
-          </scroll-view>
-        </swiper-item>
-      </swiper>
     </view>
   </view>
 

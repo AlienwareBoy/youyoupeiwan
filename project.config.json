@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 20,
 			"list": [
 				{
 					"id": 0,
@@ -183,6 +183,19 @@
 					"name": "管理员-订单管理",
 					"pathName": "superAdmin/pages/orderManagement/orderManagement",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "平台",
+					"pathName": "pages/platformOverview/platformOverview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息管理",
+					"pathName": "pages/notification/notification",
 					"scene": null
 				}
 			]

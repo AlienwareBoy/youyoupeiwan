@@ -55,6 +55,7 @@
 
 .orderList {
   height: 100%;
+  margin-bottom: 20rpx;
 }
 
 .orderItem {

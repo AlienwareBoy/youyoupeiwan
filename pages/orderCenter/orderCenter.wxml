@@ -2,57 +2,60 @@
   <view class="container">
     <view class="indicatorDots row">
       <block wx:for="{{DotsList}}" wx:key="{{index}}">
-        <view class="DotsItem" data-index='{{item.status}}' catchtap="choiceDots">
+        <view class="DotsItem" data-status='{{item.status}}' catchtap="choiceDots">
           <text>{{item.text}}</text>
           <text wx:if="{{clickIndex===item.status?true:false}}"></text>
         </view>
       </block>
     </view>
     <view class="orderList">
-      <swiper circular="{{true}}" current="{{swiperIndex}}" style="height:100%;" bindchange='changeClickIndex'>
-        <swiper-item class='swiperItem'>
-          <block wx:for="{{itemList}}" wx:key="{{item.orderId}}">
+      <swiper circular="{{true}}" current="{{currentIndex}}" style="height:100%;" bindchange='changeClickIndex'>
+        <block wx:for="{{DotsList}}" wx:key="{{index}}">
+          <swiper-item class='swiperItem'>
             <scroll-view scroll-y class="scrollViewStyle">
-              <view class="orderItem">
-                <view class="fixedBorder">
-                  <view class="fiexLeft">
-                    <text class="gameName" wx:if="{{item.status===10&&item.linkphone===true}}">已被获取联系方式</text>
-                     <text class="gameName" wx:elif="{{item.status===14&&item.linkphone===true}}">交易成功</text>
-                    <text class="gameName" wx:else>抢单中</text>
-                    <view class="userInfo row">
-                      <text wx:if="{{item.gender==='1'}}">男</text>
-                      <text wx:else>女</text>
-                      <text>{{item.age}}</text>
-                      <text>{{item.cateName1}}</text>
+              <block wx:for="{{itemList}}" wx:key="{{item.orderId}}">
+                <view class="orderItem">
+                  <view class="fixedBorder">
+                    <view class="fiexLeft">
+                      <text class="gameName" wx:if="{{item.status===10&&item.linkphone===true}}">已被获取联系方式</text>
+                      <text class="gameName" wx:elif="{{item.status===14&&item.linkphone===true}}">交易成功</text>
+                      <text class="gameName" wx:else>抢单中</text>
+                      <view class="userInfo row">
+                        <text wx:if="{{item.gender==='1'}}">男</text>
+                        <text wx:else>女</text>
+                        <text>{{item.age}}</text>
+                        <text>{{item.cateName1}}</text>
+                      </view>
+                      <view class="dataStyle row">
+                        <text class="borderStyle"></text>
+                        <text class="orderDate">日期：{{item.createTime}}</text>
+                      </view>
                     </view>
-                    <view class="dataStyle row">
-                      <text class="borderStyle"></text>
-                      <text class="orderDate">日期：{{item.createTime}}</text>
+                    <view class="fiexedMoney">
+                      <text>{{item.price}}</text>
+                      <text>友友币</text>
                     </view>
                   </view>
-                  <view class="fiexedMoney">
-                    <text>{{item.price}}</text>
-                    <text>友友币</text>
-                  </view>
-                </view>
-                <view class="changeBorder">
-                  <view class="changeState_ing" wx:if="{{item.status===10&&item.linkphone===true}}">
-                    <view class="dataStyle row">
-                      <text class="orderDate">联系人</text>
-                    </view>
-                    <view class="changeState_call">
-                      <view class="infoItem row">
-                        <text>{{item.userName}}</text>
-                        <text>微信号:{{item.wechatId}}</text>
-                        <text class="row" data-phone="{{item.wechatId}}" catchtap="getPhone">复制联系方式</text>
+                  <view class="changeBorder">
+                    <view class="changeState_ing" wx:if="{{item.status===10&&item.linkphone===true}}">
+                      <view class="dataStyle row">
+                        <text class="orderDate">联系人</text>
+                      </view>
+                      <view class="changeState_call">
+                        <view class="infoItem row">
+                          <text>{{item.userName}}</text>
+                          <text>微信号:{{item.wechatId}}</text>
+                          <text class="row" data-phone="{{item.wechatId}}" catchtap="getPhone">复制联系方式</text>
+                        </view>
                       </view>
                     </view>
                   </view>
                 </view>
-              </view>
+              </block>
             </scroll-view>
-          </block>
-        </swiper-item>
+          </swiper-item>
+        </block>
+
         <!-- <swiper-item class='swiperItem'>
           <scroll-view scroll-y class="scrollViewStyle">
             <view class="orderItem">

@@ -13,23 +13,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperIndex: 0,
+    currentIndex: '',
     clickIndex: 10,
     DotsList: [{
       text: '正在抢单',
       status: 10,
     }, {
       text: '成功订单',
-      status: 12,
-    }, {
-      text: '抢单失败',
       status: 14,
     }, {
       text: '历史订单',
       status: 0,
     }],
     form: {
-      "status": "10",
+      "status": 10,
       "page": 1,
       "pageSize": 10
     }
@@ -39,29 +36,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getData(10);
+    this.getData(this.data.form);
   },
-  getData(status, page = 1) {
-    $ajax.post(orderList, {
-      status,
-      page,
-      pageSize: 20
-    }).then(res => {
+  getData(form) {
+    $ajax.post(orderList, form).then(res => {
       this.setData({
         itemList: res.data.data,
       })
     })
   },
   changeClickIndex(e) {
+    let status = 10;
+    let clickIndex = this.data.clickIndex;
+    switch (e.detail.current) {
+      case 0:
+        status = 10;
+        break;
+      case 1:
+        status = 14;
+        break;
+      case 2:
+        status = 0;
+        break;
+    }
+    this.data.form.status = status;
     this.setData({
-      clickIndex: e.detail.current
+      currentIndex: e.detail.current,
+      clickIndex: status
     })
+    this.getData(this.data.form);
   },
   choiceDots(e) {
     this.setData({
-      clickIndex: e.currentTarget.dataset.index
+      clickIndex: e.currentTarget.dataset.status
     })
-    this.getData(this.data.clickIndex);
+    this.data.form.status = e.currentTarget.dataset.status;
+    this.getData(this.data.form);
   },
   getPhone(e) {
     let {

@@ -1,4 +1,5 @@
 const https = 'http://118.31.102.106:9117';
+// 118.31.102.106:9117   http://47.100.119.84:35152
 let token = wx.getStorageSync('token');
 let export_defalut = module.exports;
 export_defalut.login = https + '/wx/login'; //登录
@@ -36,3 +37,6 @@ export_defalut.editSecuery = https + `/user/editSecuery?token=${token}`; //修�
 export_defalut.getEndTime = https + `/user/getEndTime?token=${token}`; //提前解封
 export_defalut.userTitle = https + `/user/userTitle?token=${token}`; //封号
 export_defalut.postCentreByAdmin = https + `/post/postCentreByAdmin?token=${token}`; //订单管理
+export_defalut.queryBannerList = https + `/comm/queryBannerList`; //banner
+export_defalut.noticList = https + `/comm/noticList`; //公告
+export_defalut.infoList = https + `/comm/infoList?token=${token}`; //消息管理
