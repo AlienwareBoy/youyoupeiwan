@@ -35,7 +35,7 @@ Page({
     } = e.currentTarget.dataset
     if (this.data.isEdit) {
       Model('温馨提示', '是否删除这个游戏,该操作不可逆?').then(res => {
-        $ajax.post(optionCategory, {
+        $ajax.post(`${optionCategory}?token=${wx.getStorageSync('token')}`, {
           cateId: this.data.gameList[index].cateId
         }).then(res => {
           Toast('删除成功')
@@ -55,7 +55,7 @@ Page({
     } = e.currentTarget.dataset;
     if (this.data.isEdit) {
       Model('温馨提示', '是否删除这个分类?').then(res => {
-        $ajax.post(optionCategory, {
+        $ajax.post(`${optionCategory}?token=${wx.getStorageSync('token')}`, {
           cateId: this.data.GradeList[index].cateId
         }).then(res => {
           Toast('删除成功')
@@ -132,7 +132,7 @@ Page({
   },
   addGradeName() {
     let cateName = this.data.GradeName;
-    $ajax.post(addlevel, {
+    $ajax.post(`${addlevel}?token=${wx.getStorageSync('token')}`, {
       cateName,
       "parentId": this.data.gameIndex
     }).then(res => {

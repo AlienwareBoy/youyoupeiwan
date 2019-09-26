@@ -26,6 +26,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   onLoad(e) {
+    
     this.setData({
       shareId: e.shareId
     })

@@ -34,7 +34,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    endTime:'请选择封号时间',
+    endTime: '请选择封号时间',
     reason: '',
     years: years,
     year: date.getFullYear(),
@@ -107,6 +107,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.setStorageSync('token', wx.getStorageSync('userObj').token)
     this.getData();
   },
   getData() {
@@ -120,7 +121,7 @@ Page({
   checkUserSeal() {
     let str = `${this.data.year}-${this.data.month}-${this.data.day}`
     let date = new Date(str);
-    if (this.data.endTime ==='请选择封号时间')return
+    if (this.data.endTime === '请选择封号时间') return
     $ajax.post(userTitle, {
       "userId": this.data.nowUserId,
       "reason": this.data.reason,
@@ -131,7 +132,7 @@ Page({
       Toast('封号成功')
       this.getData();
       this.setData({
-        isClickIndex:''
+        isClickIndex: ''
       })
     })
   },
@@ -180,7 +181,7 @@ Page({
     switch (e.detail.value) {
       case '0':
         wx.navigateTo({
-          url: `../../../pages/userInfo/userInfo?isShowJoin=0`
+          url: `../../../pages/userInfo/userInfo?isShowJoin=0&id=${itemList[index].userId}`
         })
         break
       case '1':
@@ -198,7 +199,7 @@ Page({
         this.userType = this.selectComponent('#userType');
         this.userType.openPopup();
         this.setData({
-          isClickIndex:0
+          isClickIndex: 0
         })
         break;
     }
@@ -230,7 +231,7 @@ Page({
         return
       }
       Model(`温馨提醒`, `是否解封当前用户?`).then(res => {
-        $ajax.post(getEndTime, {
+        $ajax.post(`${getEndTime}?token=${wx.getStorageSync('token')}`, {
           userId: this.data.nowUserId,
         }).then(res => {
           this.popBottom = this.selectComponent('#userGrade')
@@ -251,7 +252,7 @@ Page({
       return
     } else {
       Model(`温馨提醒`, `是否将当前用户等级修改为${this.data.gradeList[this.data.isClickIndex]}?`).then(res => {
-        $ajax.post(editSecuery, {
+        $ajax.post(`${editSecuery}?token=${wx.getStorageSync(token)}`, {
           userId: this.data.nowUserId,
           status
         }).then(res => {

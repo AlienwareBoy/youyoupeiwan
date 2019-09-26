@@ -42,7 +42,7 @@ Page({
     this.getData(this.data.form);
   },
   getData(form) {
-    $ajax.post(postCenter, form).then(res => {
+    $ajax.post(`${postCenter}?token=${wx.getStorageSync('token')}`, form).then(res => {
       console.log(res)
       this.setData({
         itemList: res.data.data

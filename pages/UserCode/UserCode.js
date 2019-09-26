@@ -20,7 +20,7 @@ Page({
     this.getUserData();
   },
   getUserData() {
-    $ajax.post(getUserData).then(res => {
+    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`).then(res => {
       console.log(res.data.data)
       this.setData({
         payCode: res.data.data.payCodeUrl

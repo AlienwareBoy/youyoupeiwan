@@ -39,7 +39,7 @@ Page({
   },
   check(){
     console.log(productPost)
-    $ajax.post(productPost,this.data.form).then(res=>{
+    $ajax.post(`${productPost}?token=${wx.getStorageSync('token')}`,this.data.form).then(res=>{
       console.log(res)
       Toast('发帖成功').then(res=>{
         wx.navigateBack(-1)

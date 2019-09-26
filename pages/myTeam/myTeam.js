@@ -30,7 +30,7 @@ Page({
     this.getData()
   },
   getData() {
-    $ajax.post(myteam, this.data.form).then(res => {
+    $ajax.post(`${myteam}?token=${wx.getStorageSync('token')}`, this.data.form).then(res => {
       this.setData({
         itemList: res.data.data
       })

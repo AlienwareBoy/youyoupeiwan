@@ -39,7 +39,7 @@ Page({
     this.getData(this.data.form);
   },
   getData(form) {
-    $ajax.post(orderList, form).then(res => {
+    $ajax.post(`${orderList}?token=${wx.getStorageSync('token')}`, form).then(res => {
       this.setData({
         itemList: res.data.data,
       })

@@ -7,7 +7,8 @@ import {
 } from '../../../utils/api'
 import {
   chooseImage,
-  uploadFile
+  uploadFile,
+  Toast
 } from '../../../utils/miniappPromise'
 Page({
 
@@ -31,8 +32,8 @@ Page({
 
   },
   createGame(e) {
-    $ajax.post(addCate, this.data.form).then(res => {
-      console.log(res)
+    $ajax.post(`${addCate}?token=${wx.getStorageSync('token')}`, this.data.form).then(res => {
+      Toast('创建成功')
     })
   },
   getValue(e) {

@@ -64,7 +64,7 @@ Page({
     })
   },
   getData() {
-    $ajax.post(paylogManage, this.data.form).then(res => {
+    $ajax.post(`${paylogManage}?token=${wx.getStorageSync('token')}`, this.data.form).then(res => {
       this.setData({
         itemList: res.data.data
       })
@@ -84,12 +84,12 @@ Page({
     }
   },
   setMoney(price) {
-    $ajax.post(optionPayLog, { price}).then(res => {
+    $ajax.post(`${optionPayLog}?token=${wx.getStorageSync('token')}`, { price}).then(res => {
       Toast('已发送充值提醒')
     })
   },
   putMoney(price) {
-    $ajax.post(extractPayLog, { price}).then(res => {
+    $ajax.post(`${extractPayLog}?token=${wx.getStorageSync('token')}`, { price}).then(res => {
       Toast('已发送提现提醒')
     })
   },

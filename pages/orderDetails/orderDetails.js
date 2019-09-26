@@ -63,7 +63,7 @@ Page({
       return
     } else if (this.data.postLink) {
       Model('温馨提示', '确认与该用户达成交易?').then(res => {
-        $ajax.post(affirmDeal, {
+        $ajax.post(`${affirmDeal}?token=${wx.getStorageSync('token')}`, {
           postId: this.data.postId,
           userId: this.data.isGetPhoneIndex
         }).then(res => {
@@ -81,7 +81,7 @@ Page({
         Toast('请先点击需要获取联系方式的会员')
         return
       }
-      $ajax.post(getLinkWay, {
+      $ajax.post(`${getLinkWay}?token=${wx.getStorageSync('token')}`, {
         postId: this.data.postId,
         userId: this.data.isGetPhoneIndex
       }).then(res => {
@@ -102,7 +102,7 @@ Page({
       return
     } else {
       Model('温馨提示', '是否确认抢单').then(res => {
-        $ajax.post(grabPost, {
+        $ajax.post(`${grabPost}?token=${wx.getStorageSync('token')}`, {
           postId: this.data.postId
         }).then(res => {
           this.getData(this.data.postId)
@@ -120,7 +120,7 @@ Page({
     })
   },
   getData(postId) {
-    $ajax.post(postItem, {
+    $ajax.post(`${postItem}?token=${wx.getStorageSync('token')}`, {
       postId
     }).then(res => {
       this.setData({

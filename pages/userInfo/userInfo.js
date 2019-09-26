@@ -39,10 +39,15 @@ Page({
         isEdit: true
       })
     }
-    this.getData();
+    if(e.id!==''){
+
+    }else{
+      this.getData();
+    }
+    
   },
   getData() {
-    $ajax.post(getUserData).then(res => {
+    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`).then(res => {
       this.setData({
         userInfo: res.data.data
       })
@@ -50,7 +55,7 @@ Page({
     })
   },
   checkInfo() {
-    $ajax.post(editUser, this.data.userInfo).then(res => {
+    $ajax.post(`${editUser}?token=${wx.getStorageSync('token')}`, this.data.userInfo).then(res => {
       Toast('保存成功')
       this.setData({
         isShow: true,
