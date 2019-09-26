@@ -6,7 +6,8 @@
       <input placeholder="请输入邀请码(可选)" value="{{invitationCode}}" data-type='invitationCode' bindblur="writeInput"></input>
       <input placeholder="请输入账户名" data-type='userName' bindblur="writeInput"></input>
       <input placeholder="请输入密码" data-type='password' type="password" bindblur="writeInput"></input>
-      <input placeholder="请输入联系方式" data-type='phone' type="password" bindblur="writeInput"></input>
+      <input placeholder="请输入微信" data-type='wechatId' type="text" bindblur="writeInput"></input>
+      <input placeholder="请输入手机号码" data-type='phone' type="text" bindblur="writeInput"></input>
       <picker class="picker" bindchange="bindPickerChange" data-type='userName' value="{{index}}" range="{{gameList}}" range-key="cateName">
         <input value="{{checkcForm.cateName}}" placeholder="请选择游戏" data-type='phone'  bindblur="writeInput" disabled></input>
       </picker>

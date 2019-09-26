@@ -111,7 +111,7 @@ Page({
   },
   getData() {
     let api = usermanage;
-    $ajax.post(api, this.data.form).then(res => {
+    $ajax.post(`${api}?token=${wx.getStorageSync('token')}`, this.data.form).then(res => {
       this.setData({
         itemList: res.data.data
       })
@@ -129,6 +129,7 @@ Page({
       this.userType = this.selectComponent('#userType');
       this.userType.closePopup();
       Toast('封号成功')
+      this.getData();
       this.setData({
         isClickIndex:''
       })

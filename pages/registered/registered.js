@@ -20,10 +20,12 @@ Page({
    */
   data: {
     isMan: 3,
-    invitationCode: '',
+    invitationCode: '',//邀请码
+    code:'',//微信code
     gameList: '',
     GradeList: '',
     checkcForm: {
+      wechatId:'',
       wxAppId: 'wxd446f43a6a08e559',
       userName: '', //账号名
       nick: '', //微信昵称
@@ -117,7 +119,6 @@ Page({
   },
   checkForm(params) {
     let flag = true;
-
     for (var key in params) {
       if (params[key] != '0' && !params[key]) {
         wx.showModal({

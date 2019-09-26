@@ -1,134 +1,73 @@
 .item {
   box-sizing: border-box;
   width: 650rpx;
+  height: 150rpx;
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2rpx 10rpx 0px rgba(42, 158, 255, 0.18);
   border-radius: 35rpx;
   margin: 0 auto;
   padding: 25rpx;
   align-items: flex-start;
   position: relative;
   margin-bottom: 30rpx;
+  justify-content: space-between;
 }
 
 .itemList {
-  /* width: 100%; */
+  padding-top: 40rpx;
 }
 
-.index {
-  padding-top: 46rpx;
+.SetorderUser {
+  display: block;
+  color: rgba(63, 75, 85, 0.5);
 }
 
-.IssuerName {
-  font-size: 25rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 36rpx;
+.orderTime text {
+  margin-right: 20rpx;
 }
 
-.userInfo {
-  margin-top: 10rpx;
-}
-
-.userInfo text {
-  color: #3f4b55;
-  opacity: 0.5;
-  font-size: 15rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  line-height: 21rpx;
-  margin-right: 10rpx;
-}
-
-.joinTime {
-  margin-top: 10rpx;
-}
-
-.joinTime text:nth-child(1) {
-  width: 20rpx;
-  height: 20rpx;
-  background: rgba(233, 233, 233, 1);
+.orderTime text:nth-child(1) {
+  width: 15rpx;
+  height: 15rpx;
   border-radius: 50%;
   display: inline-block;
+  background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
 }
 
-.joinTime text:nth-child(2) {
-  font-size: 15rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: #3f4b55;
-  opacity: 0.5;
-  line-height: 21rpx;
-  margin-left: 8rpx;
-  display: inline-block;
+.orderTime text:nth-child(2) {
+  color: rgba(63, 75, 85, 0.5);
 }
 
-.result {
-  position: absolute;
-  right: 25rpx;
-  bottom: 25rpx;
-}
-
-.resultFont {
-  font-size: 25rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 36rpx;
-}
-
-.price text:nth-child(1) {
-  font-size: 15rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 21rpx;
-}
-
-.price text:nth-child(2) {
-  font-size: 25rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 21rpx;
-  margin-left: 8rpx;
+.orderTime text:nth-child(3) {
+  color: rgba(63, 75, 85, 0.5);
 }
 
 .getPhone {
-  width: 116rpx;
-  height: 40rpx;
-  border-radius: 16px;
-  border: 1px solid rgba(159, 165, 170, 1);
-  font-size: 15rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 21rpx;
-  padding: 10rpx 13rpx 9rpx 13rpx;
+  width: 130rpx;
+  height: 45rpx;
+  border-radius: 23rpx;
+  border: 2rpx solid rgba(39, 155, 255, 1);
+  justify-content: center;
+  position: absolute;
+  right: 28rpx;
+  bottom: 28rpx;
 }
 
-.closeUserId text:nth-child(1) {
-  display: block;
-  font-size: 25rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 36rpx;
+.getPhone text {
 }
 
-.closeUserId text:nth-child(2) {
+.price {
+  position: absolute;
+  right: 28rpx;
+  bottom: 28rpx;
+}
+
+.price text:nth-child(1) {
+  font-size: 50rpx;
+  color: rgba(63, 75, 85, 1);
+}
+
+.price text:nth-child(2) {
   font-size: 20rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 28rpx;
-}
-
-.getMoneyState {
-  font-size: 25rpx;
-  font-family: PingFangSC;
-  font-weight: 600;
-  color: rgba(63, 75, 85, 1);
-  line-height: 36rpx;
+  color: rgba(63, 75, 85, 0.5);
 }
