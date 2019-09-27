@@ -55,7 +55,7 @@
   <view class="itemList">
     <block wx:for="{{itemList}}" wx:key="{item.postId}}">
       <view class="item row" data-id="{{item.postId}}" catchtap="toDetail">
-        <image class="userBg" src="{{item.cateUrl}}"></image>
+        <image lazy-load class="userBg" src="{{item.cateUrl}}"></image>
         <view class="orderInfo column">
           <text class="userTitle">{{item.cateName}}</text>
           <view class="userInfo">

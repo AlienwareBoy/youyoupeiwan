@@ -45,9 +45,7 @@ Page({
     this.getData(this.data.form);
   },
   getValue(e) {
-
     let userName = e.detail.value;
-
     if (userName !== '') {
       console.log(e.detail.value)
       let obj = Object.assign({}, this.data.form, {
@@ -70,11 +68,9 @@ Page({
   getData(form) {
     console.log(postCentreByAdmin)
     $ajax.post(`${postCentreByAdmin}?token=${wx.getStorageSync('token')}`, form).then(res => {
-      console.log(res)
       this.setData({
         itemList: res.data.data
       })
-      console.log(this.data.itemList)
     })
   },
   choiceDots(e) {

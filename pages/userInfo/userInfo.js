@@ -6,7 +6,8 @@ import {
   editUser,
   imgUpload,
   queryCateGory,
-  parenIdQuery
+  parenIdQuery,
+  queryUser
 } from '../../utils/api'
 import {
   uploadFile,
@@ -34,17 +35,27 @@ Page({
       })
     }
     if (Boolean(e.isEdit) && Boolean(e.isShow)) {
+      this.getData();
       this.setData({
         isShow: true,
         isEdit: true
       })
     }
     if(e.id!==''){
-
+      this.getUserId(e.id);
     }else{
-      this.getData();
+      console.log('123123')
+      
     }
     
+  },
+  getUserId(userId){
+    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`, { userId}).then(res => {
+      this.setData({
+        userInfo: res.data.data
+      })
+      this.getGradeList(res.data.data.cateId)
+    })
   },
   getData() {
     $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`).then(res => {

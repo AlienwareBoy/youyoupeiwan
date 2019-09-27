@@ -39,3 +39,4 @@ export_defalut.postCentreByAdmin = https + `/post/postCentreByAdmin`; //订单�
 export_defalut.queryBannerList = https + `/comm/queryBannerList`; //banner
 export_defalut.noticList = https + `/comm/noticList`; //公告
 export_defalut.infoList = https + `/comm/infoList`; //消息管理
+export_defalut.queryUser = https + `/user/queryUser`; //管理员用户详情

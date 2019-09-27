@@ -79,14 +79,6 @@
               <text>{{item.price}}</text>
               <text>友友币</text>
             </view>
-            <view class="operation row">
-              <view class="commonBtn row">
-                <text>查看订单</text>
-              </view>
-              <view class="commonBtn row">
-                <text>删除订单</text>
-              </view>
-            </view>
           </view>
         </view>
       </block>

@@ -181,11 +181,12 @@ Page({
     switch (e.detail.value) {
       case '0':
         wx.navigateTo({
-          url: `../../../pages/userInfo/userInfo?isShowJoin=0&id=${itemList[index].userId}`
+          url: `../../../pages/userInfo/userInfo?isShowJoin=0&id=${this.data.itemList[index].userId}`
         })
         break
       case '1':
         let itemList = this.data.itemList;
+        console.log(itemList)
         let url = `../../../superAdmin/pages/userHistory/userHistory?userImage=${itemList[index].headImg}&price=${itemList[index].useMoney}&userName=${itemList[index].userName}&userId=${itemList[index].userId}`;
         wx.navigateTo({
           url
@@ -252,7 +253,7 @@ Page({
       return
     } else {
       Model(`温馨提醒`, `是否将当前用户等级修改为${this.data.gradeList[this.data.isClickIndex]}?`).then(res => {
-        $ajax.post(`${editSecuery}?token=${wx.getStorageSync(token)}`, {
+        $ajax.post(`${editSecuery}?token=${wx.getStorageSync('token')}`, {
           userId: this.data.nowUserId,
           status
         }).then(res => {

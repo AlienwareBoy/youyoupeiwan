@@ -2,8 +2,8 @@
   <view class="headerBg">
     <image class="leftBg comColr" src='../../assets/images/Hompage_decoration2@2x.png'></image>
     <view class="header">
-      <image class="userInfo" src="../../assets/images/Hompage_decoration3@2x.png"></image>
-      <image class="userAvater" src="{{nowUser.headImg}}"></image>
+      <image lazy-load	 class="userInfo" src="../../assets/images/Hompage_decoration3@2x.png"></image>
+      <image lazy-load	 class="userAvater" src="{{nowUser.headImg}}"></image>
       <text class="userName">{{nowUser.userName}}</text>
       <text class="Nameplate">{{userNameplate}}</text>
       <text class="Nameplate idborder">邀请码:{{nowUser.invitationCode}}</text>
@@ -16,12 +16,12 @@
         </view>
         <text class="line"></text>
         <view class="shareCode column" catchtap="openShare">
-          <image src="../../assets/images/homepage_invitation@2x.png"></image>
+          <image lazy-load	 src="../../assets/images/homepage_invitation@2x.png"></image>
           <text>发起邀请</text>
         </view>
       </view>
     </view>
-    <image class="rightBg comColr" src='../../assets/images/Hompage_decoration1@2x.png'></image>
+    <image lazy-load	 class="rightBg comColr" src='../../assets/images/Hompage_decoration1@2x.png'></image>
   </view>
   <view class="userCenter">
     <view class="comlyout">
@@ -35,13 +35,13 @@
         </view>
         <view class="moduleItem column">
           <navigator url="../PostingSquare/PostingSquare?status=10">
-            <image src="../../assets/images/Homepage_Posted@2x.png" class="icon" alt="" />
+            <image lazy-load	 src="../../assets/images/Homepage_Posted@2x.png" class="icon" alt="" />
             <text>已发帖管理</text>
           </navigator>
         </view>
         <view class="moduleItem column">
           <navigator url="../Posting/Posting">
-            <image src="../../assets/images/Homepage_Post@2x.png" class="icon" alt="" />
+            <image lazy-load	 src="../../assets/images/Homepage_Post@2x.png" class="icon" alt="" />
             <text>立即发帖</text>
           </navigator>
         </view>
@@ -52,19 +52,19 @@
       <view class="ModuleList row">
         <view class="moduleItem column">
           <navigator url="../orderCenter/orderCenter">
-            <image src="../../assets/images/Homepage_Single@2x.png" class="icon" alt="" />
+            <image lazy-load src="../../assets/images/Homepage_Single@2x.png" class="icon" alt="" />
             <text>正在抢单</text>
           </navigator>
         </view>
         <view class="moduleItem column">
           <navigator url="../orderCenter/orderCenter">
-            <image src="../../assets/images/Homepage_Clinch a deal@2x.png" class="icon" alt="" />
+            <image lazy-load src="../../assets/images/Homepage_Clinch a deal@2x.png" class="icon" alt="" />
             <text>成交订单</text>
           </navigator>
         </view>
         <view class="moduleItem column">
           <navigator url="../orderCenter/orderCenter">
-            <image src="../../assets/images/Homeage_history@2x.png" class="icon" alt="" />
+            <image lazy-load src="../../assets/images/Homeage_history@2x.png" class="icon" alt="" />
             <text>历史订单</text>
           </navigator>
         </view>

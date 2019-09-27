@@ -13,10 +13,10 @@ Page({
     currentIndex: '',
     isSeeJoiner: true,
     // swiperIndex: 0,
-    clickIndex: 1,
+    clickIndex: 0,
     itemList: [],
     form: {
-      "status": 12,
+      "status": 10,
       "page": 1,
       "pageSize": 10
     },
