@@ -3,7 +3,7 @@
     <image class="bground" src="../../assets/images/bg@2x.png"></image>
     <view class="logining">
       <text class="loginTitle">用户注册</text>
-      <input placeholder="请输入邀请码(可选)" value="{{invitationCode}}" data-type='invitationCode' bindblur="writeInput"></input>
+      <input placeholder="请输入邀请码(可选)" value="{{invitationCode}}" disabled data-type='invitationCode' bindblur="writeInput"></input>
       <input placeholder="请输入账户名" data-type='userName' bindblur="writeInput"></input>
       <input placeholder="请输入密码" data-type='password' type="password" bindblur="writeInput"></input>
       <input placeholder="请输入微信" data-type='wechatId' type="text" bindblur="writeInput"></input>

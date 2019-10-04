@@ -103,4 +103,15 @@ Page({
     })
     this.getData(this.data.form);
   },
+  onReachBottom(e) {
+    if (!this.data.isShowNextPage) {
+      Toast('已经到最后一页')
+      return
+    }
+    this.data.form.page++;
+    this.getData(this.data.form);
+    this.setData({
+      'form.page': this.data.page
+    })
+  }
 })
