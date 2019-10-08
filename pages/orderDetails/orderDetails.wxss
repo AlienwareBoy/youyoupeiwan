@@ -143,7 +143,6 @@
 .waitList .item .who image {
   width: 60rpx;
   height: 60rpx;
-  background: rgba(216, 216, 216, 1);
   border-radius: 10rpx;
 }
 

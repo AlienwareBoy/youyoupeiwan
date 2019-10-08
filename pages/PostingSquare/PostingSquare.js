@@ -45,6 +45,7 @@ Page({
     $ajax.post(`${postCenter}?token=${wx.getStorageSync('token')}`, form).then(res => {
       console.log(res)
       this.setData({
+        isShowNextPage: res.data.page.next,
         itemList: res.data.data
       })
     })
@@ -89,4 +90,15 @@ Page({
     this.data.form.status=status;
     this.getData(this.data.form)
   },
+  onReachBottom(e) {
+    if (!this.data.isShowNextPage) {
+      Toast('已经到最后一页')
+      return
+    }
+    this.data.form.page++;
+    this.getData(this.data.form);
+    this.setData({
+      'form.page': this.data.page
+    })
+  }
 })

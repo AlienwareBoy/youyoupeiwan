@@ -29,11 +29,13 @@
       <view class="priceFilter" wx:if="{{clickIndex===2}}">
         <view class="gameType">
           <text class="filterTitle">游戏分类</text>
-          <block wx:for="{{gameList}}" :key="{{item.cateId}}">
-            <view class="userGame " data-id="{{item.cateId}}" catchtap="choiceGame">
-              <text class="{{choiceGameIndex===item.cateId?'isClick':'noClick'}}">{{item.cateName}}</text>
-            </view>
-          </block>
+          <view class="row" style="flex-wrap:wrap;">
+            <block wx:for="{{gameList}}" :key="{{item.cateId}}">
+              <view class="userGame " data-id="{{item.cateId}}" catchtap="choiceGame">
+                <text class="{{choiceGameIndex===item.cateId?'isClick':'noClick'}}">{{item.cateName}}</text>
+              </view>
+            </block>
+          </view>
         </view>
         <view class="gameType">
           <text class="filterTitle">游戏等级</text>
@@ -78,7 +80,5 @@
 
   </view>
   <view class="Mask" wx:if="{{showMask}}" catchtap="closeSearch"></view>
-  <!-- <view class="rightSearchPopup">
 
-  </view> -->
 </view>
