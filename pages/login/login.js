@@ -23,15 +23,17 @@ Page({
     motto: '点击 “编译” 以构建',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   onLoad(e) {
-    
+    let a = [{
+      d: 1
+    }, {
+      d: 2
+    }];
     this.setData({
       shareId: e.shareId
     })
   },
-  onShow() {},
   currentAdd(e) {
     if (e.detail.userInfo) {
       wx.setStorageSync('userInfo', e.detail.userInfo)
@@ -131,7 +133,6 @@ Page({
         password,
       }).then(res => {
         wx.setStorageSync('userObj', res.data.data)
-        console.log(res.data.data.token)
         wx.setStorageSync('token', res.data.data.token)
         wx.switchTab({
           url: `../userManager/userManager`,

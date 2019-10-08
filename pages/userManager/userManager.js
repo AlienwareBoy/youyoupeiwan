@@ -197,8 +197,6 @@ Page({
   //   });
   // },
   permissions(userPermissions) {
-    const routes = []; //可以访问的路由
-    let permissList = userPermissions.split(",");
     let userPath = userPermissions.split(","); //用户可以访问的路由
     this.data.permissions.forEach(item => {
       let nowArr = item.admin.split(','); //路由表规定的路由
@@ -219,33 +217,6 @@ Page({
       showMask: true,
       showShare: false
     })
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
   },
 
   /**
