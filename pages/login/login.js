@@ -6,6 +6,7 @@ import {
   register,
   auth
 } from '../../utils/api'
+const app = getApp();
 Page({
   data: {
     form: {
@@ -25,11 +26,6 @@ Page({
     hasUserInfo: false,
   },
   onLoad(e) {
-    let a = [{
-      d: 1
-    }, {
-      d: 2
-    }];
     this.setData({
       shareId: e.shareId
     })
