@@ -1,0 +1,12 @@
+.swiperGetMoneny {
+  width: 400rpx;
+  height: 810rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.seeImage {
+  width: 400rpx;
+  height: 810rpx;
+}

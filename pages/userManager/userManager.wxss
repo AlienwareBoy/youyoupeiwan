@@ -8,6 +8,17 @@
   overflow: inherit;
 }
 
+.upgradeVIP {
+  width: 100rpx;
+  height: 45rpx;
+  border-radius: 23px;
+  border: 2rpx solid rgba(255, 255, 255, 1);
+  position: absolute;
+  right: 44rpx;
+  top: 50rpx;
+  justify-content: center;
+}
+
 .index {
   padding-top: 87rpx;
 }
@@ -290,6 +301,17 @@
   padding-top: 50rpx;
 }
 
+.MoneyPopup {
+  width: 560rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8rpx;
+  padding-top: 50rpx;
+}
+
 .prompt {
   text-align: center;
 }
@@ -320,4 +342,20 @@
   position: fixed;
   top: -1000px;
   left: -1000px;
+}
+
+.getMoneyTitle {
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium, PingFangSC;
+  font-weight: 500;
+  color: rgba(39, 155, 255, 1);
+  line-height: 50rpx;
+  margin: 0 105rpx;
+}
+
+.getMoneyCode {
+  width: 319rpx;
+  height: 433rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
 }

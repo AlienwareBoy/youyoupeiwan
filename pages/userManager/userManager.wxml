@@ -2,11 +2,12 @@
   <view class="headerBg">
     <image class="leftBg comColr" src='../../assets/images/Hompage_decoration2@2x.png'></image>
     <view class="header">
-      <image lazy-load	 class="userInfo" src="../../assets/images/Hompage_decoration3@2x.png"></image>
-      <image lazy-load	 class="userAvater" src="{{nowUser.headImg}}"></image>
+      <image lazy-load class="userInfo" src="../../assets/images/Hompage_decoration3@2x.png"></image>
+      <image lazy-load class="userAvater" src="{{nowUser.headImg}}"></image>
       <text class="userName">{{nowUser.userName}}</text>
       <text class="Nameplate">{{userNameplate}}</text>
       <text class="Nameplate idborder">邀请码:{{nowUser.invitationCode}}</text>
+      <view class="upgradeVIP app-fz-18 row app-color-fff" catchtap="updateVip" wx:if="{{nowUser.userType===10}}">升级VIP</view>
       <view class="features row">
         <view class="Myteam">
           <navigator url="../myTeam/myTeam">
@@ -16,12 +17,12 @@
         </view>
         <text class="line"></text>
         <view class="shareCode column" catchtap="openShare">
-          <image lazy-load	 src="../../assets/images/homepage_invitation@2x.png"></image>
+          <image lazy-load src="../../assets/images/homepage_invitation@2x.png"></image>
           <text>发起邀请</text>
         </view>
       </view>
     </view>
-    <image lazy-load	 class="rightBg comColr" src='../../assets/images/Hompage_decoration1@2x.png'></image>
+    <image lazy-load class="rightBg comColr" src='../../assets/images/Hompage_decoration1@2x.png'></image>
   </view>
   <view class="userCenter">
     <view class="comlyout">
@@ -35,13 +36,13 @@
         </view>
         <view class="moduleItem column">
           <navigator url="../PostingSquare/PostingSquare?status=10">
-            <image lazy-load	 src="../../assets/images/Homepage_Posted@2x.png" class="icon" alt="" />
+            <image lazy-load src="../../assets/images/Homepage_Posted@2x.png" class="icon" alt="" />
             <text>已发帖管理</text>
           </navigator>
         </view>
         <view class="moduleItem column">
           <navigator url="../Posting/Posting">
-            <image lazy-load	 src="../../assets/images/Homepage_Post@2x.png" class="icon" alt="" />
+            <image lazy-load src="../../assets/images/Homepage_Post@2x.png" class="icon" alt="" />
             <text>立即发帖</text>
           </navigator>
         </view>
@@ -72,6 +73,11 @@
     </view>
   </view>
   <view class="itemList">
+    <view class="item" catchtap="getkefu">
+      <image src="../../assets/images/HomePage_Square@2x.png" class="itemIcon"></image>
+      <text class="itemFont">联系客服</text>
+      <text class="iconfont icon-right arraw"></text>
+    </view>
     <block wx:for="{{permissions}}" wx:key="{{index}}">
       <navigator url="{{item.url}}">
         <view class="item" wx:if="{{item.toPath}}">
@@ -104,6 +110,17 @@
         <view class="saveShareImage row">
           <text>保存海报</text>
         </view>
+      </view>
+    </view>
+  </mask>
+  <mask showMask='{{showGetMoney}}' catchcloseMask="closeMask">
+    <view slot="centerContent">
+      <view class="MoneyPopup column">
+        <text class="getMoneyTitle">充值99元成为VIP会员</text>
+        <image class="getMoneyCode" src="https://youpw.oss-cn-shenzhen.aliyuncs.com/5e6cccfae6354436af0bd2f644c3ae13.png" catchtap="getMoney"></image>
+        <text class="app-color-0005 app-fz-20">点击图中二维码成功付款后</text>
+        <text class="app-color-0005 app-fz-20">请耐心等待平台管理员审核</text>
+        <text class="app-color-0005 app-fz-20" style="margin-bottom:50rpx">审核通过后会有平台消息推送</text>
       </view>
     </view>
   </mask>

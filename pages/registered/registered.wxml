@@ -3,16 +3,16 @@
     <image class="bground" src="../../assets/images/bg@2x.png"></image>
     <view class="logining">
       <text class="loginTitle">用户注册</text>
-      <input placeholder="请输入邀请码(可选)" value="{{invitationCode}}" disabled data-type='invitationCode' bindblur="writeInput"></input>
+      <input placeholder="邀请码(可选)" value="{{invitationCode}}" disabled data-type='invitationCode' bindblur="writeInput"></input>
       <input placeholder="请输入账户名" data-type='userName' bindblur="writeInput"></input>
       <input placeholder="请输入密码" data-type='password' type="password" bindblur="writeInput"></input>
       <input placeholder="请输入微信" data-type='wechatId' type="text" bindblur="writeInput"></input>
       <input placeholder="请输入手机号码" data-type='phone' type="text" bindblur="writeInput"></input>
       <picker class="picker" bindchange="bindPickerChange" data-type='userName' value="{{index}}" range="{{gameList}}" range-key="cateName">
-        <input value="{{checkcForm.cateName}}" placeholder="请选择游戏" data-type='phone'  bindblur="writeInput" disabled></input>
+        <input value="{{checkcForm.cateName}}" placeholder="请选择游戏" data-type='phone' bindblur="writeInput" disabled></input>
       </picker>
       <picker class="picker" bindchange="getGrade" data-type='userName' value="{{index}}" range="{{GradeList}}" range-key="cateName">
-        <input value="{{checkcForm.level}}" placeholder="请选择等级" data-type='phone'  bindblur="writeInput" disabled></input>
+        <input value="{{checkcForm.level}}" placeholder="请选择等级" data-type='phone' bindblur="writeInput" disabled></input>
       </picker>
       <view class="checkGender row">
         <view class="ComSex row" data-type='1' catchtap="choiceGender">
@@ -30,6 +30,11 @@
           <text>点击上传自己的收款二维码</text>
           <text>（微信二维码收款码）</text>
         </view>
+        <view class="remind" catchtap="openCode">
+          <text class="app-fz-18 app-color-0005">收款码保存方式</text>
+          <text class="app-fz-18 app-color-0005">我的页面   - ->  支付  - ->  收付款  - ->  二维码收款 - ->  保存收款码</text>
+          <text class="seeCode" >查看演示</text>
+        </view>
       </view>
     </view>
     <view class="relBtn p3">
@@ -38,4 +43,5 @@
       </view>
     </view>
   </view>
+  <see-code id="seeCode"></see-code>
 </view>

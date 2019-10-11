@@ -22,11 +22,6 @@
   justify-content: center;
 }
 
-.relBtn {
-  width: 100%;
-  padding-top: 337rpx;
-}
-
 .loginCol {
   background: linear-gradient(180deg, rgba(79, 203, 255, 1) 0%, rgba(39, 155, 255, 1) 100%);
 }
@@ -50,7 +45,7 @@
 
 .p3 {
   padding-top: 79rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 83rpx;
   position: relative;
   z-index: 501;
 }
@@ -108,10 +103,8 @@
 }
 .collectionCode {
   width: 525rpx;
-  height: 525rpx;
   margin: 0 auto;
-  background: linear-gradient(180deg, rgba(210, 241, 255, 1) 0%, rgba(207, 234, 255, 1) 100%);
-  border-radius: 25rpx;
+ 
   margin-top: 90rpx;
 }
 
@@ -123,7 +116,9 @@
 
 .introduceCode {
   justify-content: center;
-  height: 100%;
+  height: 525rpx;
+   background: linear-gradient(180deg, rgba(210, 241, 255, 1) 0%, rgba(207, 234, 255, 1) 100%);
+  border-radius: 25rpx;
 }
 
 .introduceCode text {
@@ -146,3 +141,33 @@
   background: rgba(63, 75, 85, 1);
   border: 5rpx solid rgba(179, 222, 231, 1);
 }
+.remind{
+  position: relative;
+}
+.remind text{
+  text-align: right;
+}
+.remind text:nth-child(1){
+  display: block;
+  text-align: left;
+  margin: 20rpx 0rpx;
+}
+.remind text:nth-child(2){
+  display: block;
+  text-align: right;
+}
+.remind text:nth-child(3){
+  position: absolute;
+  right: 0rpx;
+  bottom: -48rpx;
+  margin-top: 40rpx;
+  font-size:20rpx;
+  color:rgba(39,155,255,1);
+  border-bottom: 1rpx solid #279BFF;
+  
+}
+/* .seeCode{
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+} */

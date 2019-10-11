@@ -37,6 +37,7 @@
         <text class="code">我的收款码</text>
       </view>
       <image class="UploadImage" src="{{userInfo.payCodeUrl}}"></image>
+      <text class="toSee" wx:if="{{!isEdit&&isShow}}" catchtap="openCode">查看保存我的收款码演示</text>
       <text class="upload" wx:if="{{!isEdit&&isShow}}" catchtap="uploadImage">上传新的收款码</text>
     </view>
     <view class="formItem row">
@@ -51,7 +52,7 @@
       <image class="labelIcon" src="../../assets/images/Message_game Level@2x.png"></image>
       <text>游戏等级</text>
       <picker class="picker" bindchange="getGrade" data-type='userName' wx:if="{{!isEdit&&isShow}}" value="{{index}}" range="{{GradeList}}" range-key="cateName">
-        <input value="{{userInfo.level}}"  bindblur="getWx" disabled></input>
+        <input value="{{userInfo.level}}" bindblur="getWx" disabled></input>
       </picker>
       <text wx:else>{{userInfo.level}}</text>
     </view>
@@ -62,5 +63,5 @@
       <text catchtap="checkInfo">确定</text>
     </view>
   </view>
-
+  <see-code id="seeCode"></see-code>
 </view>

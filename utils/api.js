@@ -1,4 +1,4 @@
-const https = 'http://118.31.102.106:9117';
+const https = 'https://youyoupeiwan.top';
 // 118.31.102.106:9117   http://47.100.119.84:35152
 let token = wx.getStorageSync('token');
 let export_defalut = module.exports;
@@ -40,3 +40,4 @@ export_defalut.queryBannerList = https + `/comm/queryBannerList`; //banner
 export_defalut.noticList = https + `/comm/noticList`; //公告
 export_defalut.infoList = https + `/comm/infoList`; //消息管理
 export_defalut.queryUser = https + `/user/queryUser`; //管理员用户详情
+export_defalut.upgradeVip = https + `/user/upgradeVip`; //升级VIP

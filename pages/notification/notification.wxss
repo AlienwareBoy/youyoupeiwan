@@ -13,6 +13,26 @@
   justify-content: space-between;
 }
 
+.noMessage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.noMessage image {
+  width: 400rpx;
+  height: 350rpx;
+}
+
+.noMessage text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFangSC;
+  font-weight: 600;
+  color: rgba(159, 165, 170, 1);
+  line-height: 42rpx;
+}
+
 .itemList {
   padding-top: 40rpx;
 }

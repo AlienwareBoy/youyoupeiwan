@@ -1,0 +1,9 @@
+<mask showMask='{{showCode}}' catchcloseMask="closeMask">
+  <view slot="centerContent" class="swiperGetMoneny">
+    <swiper indicator-dots="true" autoplay="true" interval="3000" class="seeImage">
+      <swiper-item wx:for="{{itemList}}" wx:key="index" class='seeImage'>
+        <image class="seeImage" src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</mask>

@@ -41,16 +41,18 @@ Page({
         isEdit: true
       })
     }
-    if(e.id!==''){
+    if (e.id !== '') {
       this.getUserId(e.id);
-    }else{
+    } else {
       console.log('123123')
-      
+
     }
-    
+
   },
-  getUserId(userId){
-    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`, { userId}).then(res => {
+  getUserId(userId) {
+    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`, {
+      userId
+    }).then(res => {
       this.setData({
         userInfo: res.data.data
       })
@@ -62,8 +64,12 @@ Page({
       this.setData({
         userInfo: res.data.data
       })
-      this.getGradeList(res.data.data.cateId) 
+      this.getGradeList(res.data.data.cateId)
     })
+  },
+  openCode() {
+    this.popBottom = this.selectComponent('#seeCode')
+    this.popBottom.show()
   },
   checkInfo() {
     $ajax.post(`${editUser}?token=${wx.getStorageSync('token')}`, this.data.userInfo).then(res => {

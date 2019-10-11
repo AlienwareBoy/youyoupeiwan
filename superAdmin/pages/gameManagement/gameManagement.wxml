@@ -2,7 +2,8 @@
   <image class="bground" src="../../../assets/images/bg@2x.png"></image>
   <view class="content">
     <view class="Edit row" catchtap="isEditStatus">
-      <text>编辑</text>
+      <text wx:if="{{!isEdit}}">编辑</text>
+      <text wx:else>完成</text>
     </view>
     <view class="gameType">
       <text class="title">游戏名称</text>

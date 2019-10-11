@@ -2,21 +2,25 @@ import {
   $ajax
 } from '../../utils/request'
 import {
-  mine
-} from '../../utils/api'
-import {
+  mine,
+  upgradeVip,
   File
 } from '../../utils/api'
+import {
+  Toast
+} from '../../utils/miniappPromise.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    showGetMoney: false,
     bgShow: 'https://yunlsc.oss-cn-qingdao.aliyuncs.com/34270afdbb5746feada20fa9666d9fde.png',
     userNameplate: '',
     showPopup: false,
     showShare: false,
+    userObj: wx.getStorageSync('userObj'),
     showMask: false,
     userInfo: '',
     permissions: [{
@@ -62,6 +66,18 @@ Page({
       this.userInfo();
     }, 1000)
   },
+  getkefu() {
+    wx.setClipboardData({
+      data: 'youyoupeiwan-kf',
+      success(res) {
+        wx.getClipboardData({
+          success(res) {
+            Toast('已复制客服微信,将有专人对接')
+          }
+        })
+      }
+    })
+  },
   closeMask(e) {
     setTimeout(() => {
       this.setData({
@@ -70,7 +86,13 @@ Page({
     }, 200)
     this.setData({
       showShare: false,
-      showPopup: false
+      showPopup: false,
+      showGetMoney: false
+    })
+  },
+  updateVip() {
+    this.setData({
+      showGetMoney: true
     })
   },
   openShare(e) {
@@ -90,9 +112,17 @@ Page({
 
 
   },
+  getMoney() {
+    wx.previewImage({
+      current: 'https://youpw.oss-cn-shenzhen.aliyuncs.com/5e6cccfae6354436af0bd2f644c3ae13.png', // 当前显示图片的http链接
+      urls: ['https://youpw.oss-cn-shenzhen.aliyuncs.com/5e6cccfae6354436af0bd2f644c3ae13.png'] // 需要预览的图片http链接列表
+    })
+    $ajax.post(`${upgradeVip}?token=${wx.getStorageSync('token')}`).then(res => {
+      console.log('发送提醒')
+    })
+  },
   userInfo() {
     $ajax.post(`${mine}?token=${wx.getStorageSync('token')}`).then(res => {
-      console.log(res.data.data)
       this.permissions(String(res.data.data.userType))
       this.setData({
         nowUser: res.data.data

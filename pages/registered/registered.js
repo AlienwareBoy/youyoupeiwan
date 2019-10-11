@@ -11,7 +11,8 @@ import {
 import {
   uploadFile,
   chooseImage,
-  wxLogin
+  wxLogin,
+  Toast
 } from '../../utils/miniappPromise.js'
 Page({
 
@@ -20,12 +21,12 @@ Page({
    */
   data: {
     isMan: 3,
-    invitationCode: '',//邀请码
-    code:'',//微信code
+    invitationCode: '', //邀请码
+    code: '', //微信code
     gameList: '',
     GradeList: '',
     checkcForm: {
-      wechatId:'',
+      wechatId: '',
       wxAppId: 'wxd446f43a6a08e559',
       userName: '', //账号名
       nick: '', //微信昵称
@@ -44,6 +45,13 @@ Page({
     let {
       type
     } = e.currentTarget.dataset;
+    if (type === 'password') {
+      if (e.detail.value.length < 6) {
+        Toast('密码 长度需大于6位')
+      }
+    } else if (/^1([38]\d|4[5-9]|5[0-35-9]|6[56]|7[0-8]|9[189])\d{8}$/.test(e.detail.value)) {} else {
+      Toast('请输入正确的手机号码')
+    }
     this.setData({
       [`checkcForm.${type}`]: e.detail.value
     })
@@ -54,12 +62,16 @@ Page({
    */
   onLoad: function(options) {
     console.log(options)
-    if (options.shareId!=="undefined") {
+    if (options.shareId !== "undefined") {
       console.log(1)
       this.setData({
         'invitationCode': options.shareId
       })
     }
+  },
+  openCode() {
+    this.popBottom = this.selectComponent('#seeCode')
+    this.popBottom.show()
   },
   onShow: function() {
     this.init();

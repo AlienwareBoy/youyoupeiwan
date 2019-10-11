@@ -2,7 +2,6 @@
 
 .userInfo {
   padding-top: 66rpx;
-  
 }
 
 .userMsg {
@@ -104,7 +103,7 @@
   line-height: 28rpx;
 }
 
-.UploadImage{
+.UploadImage {
   width: 286rpx;
   height: 286rpx;
   background: rgba(233, 233, 233, 1);
@@ -170,9 +169,17 @@
   text-align: center;
   line-height: 97rpx;
 }
-.labelIcon{
+
+.labelIcon {
   width: 50rpx;
   height: 50rpx;
   margin-right: 20rpx;
   display: inline-block;
+}
+
+.toSee {
+  position: absolute;
+  left: 165px;
+  bottom: 53px;
+  border-bottom: 1rpx solid #279bff;
 }

@@ -17,13 +17,12 @@ Page({
     wechat: '',
     postLink: false, //如果点击是已经被获取联系方式的用户，下面的按钮变成确认交易
     isGetPhoneIndex: '',
-    isSeeJoiner: false,
+    isSeeJoiner: false, //查看信息
     isSuccess: false
   },
   onLoad(e) {
-    console.log(e)
     this.getData(e.id);
-    let isSeeJoiner;
+    let isSeeJoiner=false;
     if (Boolean(e.isSeeJoiner)) {
       console.log(1)
       isSeeJoiner = e.isSeeJoiner
@@ -55,7 +54,8 @@ Page({
   tobuy() {
     let wechat = this.data.wechat;
     //判断的优先级应该是 订单是否结束==>当前用户是否被获取了联系方式=>
-    if (this.data.orderInfo.mUser && this.data.isSeeJoiner===false){
+    console.log(this.data.isSeeJoiner)
+    if (this.data.orderInfo.mUser && !this.data.isSeeJoiner){
       Toast('不能抢自己的单哦')
       return
     }

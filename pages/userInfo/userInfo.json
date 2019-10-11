@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "用户资料",
-  "usingComponents": {}
+  "usingComponents": {
+    "see-code":"../../component/saveUserCode/saveUserCode"
+  }
 }
