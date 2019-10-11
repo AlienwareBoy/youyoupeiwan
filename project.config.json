@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 21,
 			"list": [
 				{
 					"id": 0,
@@ -197,6 +197,13 @@
 					"name": "订单详情",
 					"pathName": "pages/orderDetails/orderDetails",
 					"query": "id=f2edaa73e4e44adf84d64c91ee3fe27a",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息提醒",
+					"pathName": "pages/notification/notification",
+					"query": "",
 					"scene": null
 				}
 			]

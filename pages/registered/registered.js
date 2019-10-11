@@ -14,6 +14,9 @@ import {
   wxLogin,
   Toast
 } from '../../utils/miniappPromise.js'
+import {
+  debounce
+} from '../../utils/util.js'
 Page({
 
   /**
@@ -144,7 +147,8 @@ Page({
 
     return flag;
   },
-  registered(e) {
+  registered: debounce(function(e) {
+    console.log('sdfsdf')
     let result = this.checkForm(this.data.checkcForm);
     if (result) {
       console.log(e)
@@ -170,7 +174,7 @@ Page({
         })
       })
     }
-  },
+  }, 500),
   uploadImage() {
     chooseImage().then(res => {
       return res.tempFilePaths

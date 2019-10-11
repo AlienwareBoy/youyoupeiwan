@@ -62,9 +62,7 @@ Page({
   onLoad: function(options) {
     // this.getSystemInfo() //获取系统宽高
     // this.savaCanvas()
-    setTimeout(() => {
-      this.userInfo();
-    }, 1000)
+
   },
   getkefu() {
     wx.setClipboardData({
@@ -109,7 +107,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    setTimeout(() => {
+      this.userInfo();
+    }, 1000)
 
   },
   getMoney() {

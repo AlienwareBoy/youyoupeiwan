@@ -3,9 +3,9 @@
     <image src="../../assets/images/null_icon1@2x.png"></image>
     <text>暂时没有消息哦</text>
   </view>
-  <view class="itemList"  wx:else>
+  <view class="itemList" wx:else>
     <block wx:for="{{itemList}}" wx:key="item.value">
-      <view class="item column">
+      <view class="item column" data-index="{{index}}" catchtap="operating">
         <text class="app-fz-25 app-weight">{{item.remark}}</text>
         <text class="SetorderUser app-fz-18" wx:if="{{item.type===22}}">发帖人:{{item.userName}}</text>
         <text class="SetorderUser app-fz-18" wx:if="{{item.type===24}}">交易人:{{item.byUserName}}</text>

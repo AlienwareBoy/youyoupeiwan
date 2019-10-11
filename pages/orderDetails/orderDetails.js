@@ -68,9 +68,7 @@ Page({
           userId: this.data.isGetPhoneIndex
         }).then(res => {
           Toast('交易成功')
-          this.setData({
-            isSuccess: true
-          })
+          
           this.getData(this.data.postId)
         })
 
@@ -105,11 +103,12 @@ Page({
         $ajax.post(`${grabPost}?token=${wx.getStorageSync('token')}`, {
           postId: this.data.postId
         }).then(res => {
-          this.getData(this.data.postId)
+          
           Toast('抢单成功')
           this.setData({
-            orderStatus: true
+            isSuccess: true
           })
+          this.getData(this.data.postId)
         })
       })
     }
