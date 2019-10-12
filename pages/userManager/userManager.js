@@ -31,7 +31,7 @@ Page({
       iconfont: ''
     }, {
       icon: '../../assets/images/HomePage_Square@2x.png',
-      url: '../userInfo/userInfo?isShow=true&isEdit=true',
+      url: `../userInfo/userInfo?isfrom=true&isAdmin=${wx.getStorageSync('userObj').userType}&id=${wx.getStorageSync('userObj').userId}`,
       admin: '10,20,30',
       pathName: '编辑资料',
       iconfont: ''
@@ -70,7 +70,7 @@ Page({
       success(res) {
         wx.getClipboardData({
           success(res) {
-            Toast('已复制客服微信,将有专人对接')
+            Toast('已复制客服微信,请添加客服微信', 'none', 1500)
           }
         })
       }

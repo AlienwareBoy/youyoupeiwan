@@ -14,7 +14,7 @@ let $ajax = {
   },
   methods: function(url, param = {}, method = "GET") {
     wx.showLoading({
-      title: '加载中',
+      title: '数据加载中',
     })
     return new Promise((resolve, reject) => {
       wx.request({

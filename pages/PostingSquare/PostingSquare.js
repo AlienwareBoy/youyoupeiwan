@@ -2,8 +2,12 @@ import {
   $ajax
 } from '../../utils/request'
 import {
-  postCenter
+  postCenter,
+  withdraw_post
 } from '../../utils/api'
+import {
+  Model
+} from '../../utils/miniappPromise.js'
 Page({
 
   /**
@@ -50,6 +54,19 @@ Page({
       })
     })
   },
+  returnOrder(e) {
+    let {
+      id
+    } = e.currentTarget.dataset;
+    Model('温馨提示', '是否撤回帖子').then(res => {
+      $ajax.post(`${withdraw_post}?token=${wx.getStorageSync('token')}`, {
+        postId: id
+      }).then(res => {
+        Toast('撤回成功')
+        this.getData(this.data.form)
+      })
+    })
+  },
   toDetails(e) {
     wx.navigateTo({
       url: `../orderDetails/orderDetails?id=${e.currentTarget.dataset.id}&isSeeJoiner=${this.data.isSeeJoiner}`,
@@ -74,7 +91,7 @@ Page({
     }
     this.data.form.status = status;
     this.setData({
-      clickIndex:e.detail.current
+      clickIndex: e.detail.current
     })
     this.getData(this.data.form);
   },
@@ -87,7 +104,7 @@ Page({
       'form.status': status,
       clickIndex: index,
     })
-    this.data.form.status=status;
+    this.data.form.status = status;
     this.getData(this.data.form)
   },
   onReachBottom(e) {

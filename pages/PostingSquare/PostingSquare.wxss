@@ -7,6 +7,20 @@
   top: 0rpx;
 }
 
+.withdraw_post {
+  width: 120rpx;
+  height: 45rpx;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23rpx;
+  border: 2rpx solid rgba(39, 155, 255, 1);
+  font-size: 18rpx;
+  color: #279bff;
+  position: absolute;
+  right: 23rpx;
+  bottom: 17rpx;
+}
+
 .container {
   margin: 0 50rpx;
   height: 100%;

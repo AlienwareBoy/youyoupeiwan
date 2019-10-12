@@ -13,6 +13,19 @@ Page({
   onShow() {
     this.getData(this.data.form);
   },
+  getWechat(e){
+    let {wechat}=e.currentTarget.dataset;
+    wx.setClipboardData({
+      data: wechat,
+      success(res) {
+        wx.getClipboardData({
+          success(res) {
+            Toast('已复制联系方式')
+          }
+        })
+      }
+    })
+  },
   getData(form) {
     $ajax
       .post(`${infoList}?token=${wx.getStorageSync("token")}`, form)

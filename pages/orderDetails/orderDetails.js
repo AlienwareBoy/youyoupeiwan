@@ -68,8 +68,9 @@ Page({
           userId: this.data.isGetPhoneIndex
         }).then(res => {
           Toast('交易成功')
-          
-          this.getData(this.data.postId)
+          setTimeout(()=>{
+            this.getData(this.data.postId)
+          })
         })
 
 

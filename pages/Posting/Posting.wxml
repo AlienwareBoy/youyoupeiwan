@@ -1,5 +1,9 @@
 <view class='index'>
   <view class="content">
+    <view class="tip row">
+      <image src="../../assets/images/close.png"></image>
+      <text>发帖5天后如无其他用户参与抢单，该订单可撤回。</text>
+    </view>
     <image class="bg" src="../../assets/images/bg_long@2x.png"></image>
     <view class="Posting">
       <text class="PositingMsg">发帖信息</text>
@@ -33,11 +37,11 @@
           </view>
         </picker>
         <view class="input">
-          <input placeholder="请输入年龄" placeholder-class='inputfocus' data-type="age" bindblur="getValue"></input>
+          <input type='number' placeholder="请输入年龄" placeholder-class='inputfocus' data-type="age" bindblur="getValue"></input>
         </view>
         <view class="input">
           <text class="base" style="margin-bottom:90rpx;">价格设置</text>
-          <input data-type="price" placeholder="请输入所需友友币" placeholder-class='inputfocus'   bindblur="getValue"></input>
+          <input type='number' data-type="price" placeholder="请输入所需友友币" placeholder-class='inputfocus' bindblur="getValue"></input>
         </view>
         <view class="note">
           <text class="noteFont">备注</text>

@@ -16,7 +16,9 @@
   width: 100%;
   height: 100%;
 }
-
+.picker{
+  margin-left: 60rpx;
+}
 .userMsg image {
   width: 100rpx;
   height: 100rpx;

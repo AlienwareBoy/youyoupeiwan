@@ -40,6 +40,7 @@
                         <text class="borderStyle"></text>
                         <text class="orderDate" wx:if="{{item.ulist.length>0}}">目前抢单人数:{{item.ulist.length}}</text>
                         <text class="orderDate" wx:else>暂无人抢单</text>
+                        <text class="withdraw_post row" wx:if="{{item.status===10}}" data-id="{{item.postId}}" catchtap="returnOrder">撤回帖子</text>
                       </view>
                       <view class="itemList">
                         <block wx:for="{{item.ulist}}" wx:for-index="index2" wx:for-item="item2" wx:key="{{item.postId}}">
@@ -67,12 +68,12 @@
                     </view>
                     <view class="changeState_success" wx:if="{{item.status===14||item.status===0}}">
                       <!-- <block wx:for="{{item.ulist}}" wx:for-index="index2" wx:for-item="item2" wx:key="{{item.postId}}"> -->
-                        <view class="infoItem">
-                          <text>交易人</text>
-                          <text>{{item.userName}}</text>
-                          <text>微信号:{{item.wechat}}</text>
-                          <text>交易成功</text>
-                        </view>
+                      <view class="infoItem">
+                        <text>交易人</text>
+                        <text>{{item.userName}}</text>
+                        <text>微信号:{{item.wechat}}</text>
+                        <text>交易成功</text>
+                      </view>
                       <!-- </block> -->
 
                     </view>

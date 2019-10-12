@@ -127,6 +127,8 @@ Page({
       $ajax.post(login, {
         userName: username,
         password,
+        nick:wx.getStorageSync('userInfo').nickName,
+        headImg: wx.getStorageSync('userInfo').avatarUrl,
       }).then(res => {
         wx.setStorageSync('userObj', res.data.data)
         wx.setStorageSync('token', res.data.data.token)

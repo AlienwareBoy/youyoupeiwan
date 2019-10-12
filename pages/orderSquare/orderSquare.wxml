@@ -61,7 +61,7 @@
         <view class="orderInfo column">
           <text class="userTitle">{{item.cateName}}</text>
           <view class="userInfo">
-            <text wx:if="{{item.gender===1}}">男</text>
+            <text wx:if="{{item.gender==='1'}}">男</text>
             <text wx:else>女</text>
             <text>{{item.age}}</text>
             <text>{{item.cateName}}</text>

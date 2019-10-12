@@ -2,11 +2,11 @@
   <view class="container">
     <view class="header row">
       <view class="userInfo row">
-        <image src="{{formgameManage.userImage}}"></image>
-        <text>适当放松的</text>
+        <image src="{{userInfo.headImg}}"></image>
+        <text>{{userInfo.userName}}</text>
       </view>
       <view class="usermoney">
-        <text>友友币:{{formgameManage.price}}</text>
+        <text>友友币:{{userInfo.money}}</text>
       </view>
     </view>
     <view class="header row">
@@ -36,7 +36,7 @@
             <text class="app-fz-20 app-color-0001 app-mab-10 weight" wx:if="{{item.status===10&&operating===1}}">发起提现申请</text>
             <text class="app-fz-20 app-color-0001 app-mab-10 weight" wx:if="{{item.status===12&&operating===1}}">提现成功</text>
             <text class="app-fz-20 app-color-0005 app-mab-10">发起提现日期：{{item.createTime}}</text>
-            <text class="app-fz-20 app-color-0005 app-mab-10" wx:if="{{item.optionTine!==''}}">申请通过日期：{{item.optionTine}}</text>
+            <text class="app-fz-20 app-color-0005 app-mab-10" wx:if="{{item.optionTine!==null}}">申请通过日期：{{item.optionTine}}</text>
             <text class="app-fz-20 app-color-0005 app-mab-10" wx:if="{{item.optionUserNaem!==''}}">审批人：{{item.optionUserNaem}}</text>
           </view>
           <view class="checkoperatingBtn row" wx:if="{{item.status===10}}" data-id="{{item.id}}" catchtap="checkOperating">

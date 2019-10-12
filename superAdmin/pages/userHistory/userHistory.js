@@ -10,6 +10,9 @@ import {
   Model,
   Toast
 } from '../../../utils/miniappPromise.js'
+import {
+  debounce
+} from '../../../utils/util.js'
 Page({
 
   /**
@@ -17,10 +20,6 @@ Page({
    */
   data: {
     typeFont: '充值',
-    formgameManage: {
-      userImage: '',
-      userPirce: '',
-    },
     operating: 0, //0充值，1 提现
     successForm: {
       "userId": '',
@@ -39,9 +38,6 @@ Page({
   onLoad: function(options) {
     console.log(options)
     this.setData({
-      'formgameManage.userName': options.userName,
-      'formgameManage.price': options.price,
-      'formgameManage.userImage': options.userImage,
       'successForm.userId': options.userId,
     })
     this.optionPayLogHistory();
@@ -57,8 +53,15 @@ Page({
   optionPayLogHistory() {
     $ajax.post(`${optionPayLogHistory}?token=${wx.getStorageSync('token')}`, this.data.successForm).then(res => {
       console.log(res)
+      let userInfo={
+        headImg: res.data.data.headImg,
+        money: res.data.data.money,
+        userId: res.data.data.userId,
+        userName: res.data.data.userName
+      }
       this.setData({
-        typeList: res.data.data,
+        typeList: res.data.data.chargeDto,
+        userInfo,
         operating: 0
       })
     })
@@ -72,8 +75,7 @@ Page({
       })
     })
   },
-  checkOperating(e) {
-    // console.log(e)
+  checkOperating: debounce(function(e) {
     let {
       id
     } = e.currentTarget.dataset;
@@ -86,5 +88,5 @@ Page({
         Toast('该笔操作已确认')
       })
     })
-  },
+  }, 500),
 })

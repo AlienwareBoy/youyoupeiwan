@@ -7,7 +7,7 @@
       <text class="msgTitle">{{orderInfo.cateName}}·{{orderInfo.level}}</text>
       <view class="condition row">
         <text></text>
-        <text wx:if="{{orderInfo.gender===1}}">男</text>
+        <text wx:if="{{orderInfo.gender==='1'}}">男</text>
         <text wx:else>女</text>
       </view>
       <view class="condition row">

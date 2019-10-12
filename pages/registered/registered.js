@@ -51,9 +51,13 @@ Page({
     if (type === 'password') {
       if (e.detail.value.length < 6) {
         Toast('密码 长度需大于6位')
+        return
       }
-    } else if (/^1([38]\d|4[5-9]|5[0-35-9]|6[56]|7[0-8]|9[189])\d{8}$/.test(e.detail.value)) {} else {
-      Toast('请输入正确的手机号码')
+    } else if (type === 'phone') {
+      if (/^1([38]\d|4[5-9]|5[0-35-9]|6[56]|7[0-8]|9[189])\d{8}$/.test(e.detail.value)) {} else {
+        Toast('请输入正确的手机号码')
+        return
+      }
     }
     this.setData({
       [`checkcForm.${type}`]: e.detail.value
@@ -164,7 +168,9 @@ Page({
           console.log('registerCode', res)
           $ajax.post(login, {
             userName: this.data.checkcForm.userName,
-            password: this.data.checkcForm.password
+            password: this.data.checkcForm.password,
+            nick:wx.getStorageSync('userInfo').nickName,
+            headImg: wx.getStorageSync('userInfo').avatarUrl,
           }).then(res => {
             wx.setStorageSync('userObj', res.data.data)
             wx.switchTab({
@@ -174,7 +180,7 @@ Page({
         })
       })
     }
-  }, 500),
+  }, 200),
   uploadImage() {
     chooseImage().then(res => {
       return res.tempFilePaths

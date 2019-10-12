@@ -17,7 +17,7 @@
           <text class="app-fz-18 " wx:else>微信昵称:{{item.nick}}</text>
           <text class="app-fz-18" wx:if="{{item.type!==10}}">日期:{{item.createTime}}</text>
         </view>
-        <view class="getPhone row" wx:if="{{item.showPhone}}">
+        <view class="getPhone row" wx:if="{{item.showPhone}}" data-wechat="{{item.wechat}}" catchtap="getWechat">
           <text class="app-fz-18 app-color-main">复制联系方式</text>
         </view>
         <view class="price column" wx:if="{{item.showPrice}}">

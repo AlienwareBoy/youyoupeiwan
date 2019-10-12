@@ -34,6 +34,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    ishiddenPopup: '', //原生组件防止穿透
     endTime: '请选择封号时间',
     reason: '',
     years: years,
@@ -118,27 +119,61 @@ Page({
       })
     })
   },
-  checkUserSeal() {
-    let str = `${this.data.year}-${this.data.month}-${this.data.day}`
-    let date = new Date(str);
-    if (this.data.endTime === '请选择封号时间') return
-    $ajax.post(userTitle, {
-      "userId": this.data.nowUserId,
-      "reason": this.data.reason,
-      "endTime": Date.parse(str)
-    }).then(res => {
-      this.userType = this.selectComponent('#userType');
-      this.userType.closePopup();
-      Toast('封号成功')
-      this.getData();
-      this.setData({
-        isClickIndex: ''
+  checkType(e) {
+    if (this.data.isClickIndex === 1) {
+      let user = this.data.itemList.filter(item => item.userId === this.data.nowUserId);
+      console.log(user)
+      if (!user[0].isfor) {
+        Toast('当前用户没有被封号')
+        return
+      }
+      Model(`温馨提醒`, `是否解封当前用户?`).then(res => {
+        $ajax.post(`${getEndTime}?token=${wx.getStorageSync('token')}`, {
+          userId: this.data.nowUserId,
+        }).then(res => {
+          this.popBottom = this.selectComponent('#userGrade')
+          this.popBottom.closePopup()
+          this.getData();
+          Toast('修改成功')
+          this.setData({
+            isClickIndex: ''
+          })
+        })
       })
-    })
+    }
+  },
+  checkUserSeal() {
+    if (this.data.isClickIndex === 0) {
+      //封号
+      let str = `${this.data.year}-${this.data.month}-${this.data.day}`
+      let date = new Date(str);
+      if (this.data.endTime === '请选择封号时间') return
+      $ajax.post(`${userTitle}?token=${wx.getStorageSync('token')}`, {
+        "userId": this.data.nowUserId,
+        "reason": this.data.reason,
+        "endTime": Date.parse(str)
+      }).then(res => {
+        this.userType = this.selectComponent('#userType');
+        this.userType.closePopup();
+        this.getData();
+        Toast('封号成功')
+        this.setData({
+          isClickIndex: ''
+        })
+      })
+    } else {
+      //解封
+      this.checkType()
+    }
+
   },
   getTime() {
     this.popBottom = this.selectComponent('#TimeChoice');
     this.popBottom.openPopup();
+    this.data.ishiddenPopup = this.popBottom.data.isShowPopup;
+    this.setData({
+      ishiddenPopup: !this.data.ishiddenPopup
+    })
   },
   getValue(e) {
     this.setData({
@@ -181,7 +216,7 @@ Page({
     switch (e.detail.value) {
       case '0':
         wx.navigateTo({
-          url: `../../../pages/userInfo/userInfo?isShowJoin=0&id=${this.data.itemList[index].userId}`
+          url: `../../../pages/userInfo/userInfo?isfrom=false&isAdmin=30&id=${this.data.itemList[index].userId}`
         })
         break
       case '1':
@@ -223,29 +258,7 @@ Page({
     }
     return result
   },
-  checkType(e) {
-    if (this.data.isClickIndex === 1) {
-      let user = this.data.itemList.filter(item => item.userId === this.data.nowUserId);
-      console.log(user)
-      if (!user[0].isfor) {
-        Toast('当前用户没有被封号')
-        return
-      }
-      Model(`温馨提醒`, `是否解封当前用户?`).then(res => {
-        $ajax.post(`${getEndTime}?token=${wx.getStorageSync('token')}`, {
-          userId: this.data.nowUserId,
-        }).then(res => {
-          this.popBottom = this.selectComponent('#userGrade')
-          this.popBottom.closePopup()
-          this.getData();
-          Toast('修改成功')
-          this.setData({
-            isClickIndex: ''
-          })
-        })
-      })
-    }
-  },
+
   checkGrade() {
     let status = Number(this.judge(this.data.isClickIndex));
     if (!this.data.isClickIndex) {

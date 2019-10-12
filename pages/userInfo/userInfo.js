@@ -7,6 +7,7 @@ import {
   imgUpload,
   queryCateGory,
   parenIdQuery,
+  update_user,
   queryUser
 } from '../../utils/api'
 import {
@@ -16,8 +17,14 @@ import {
 } from '../../utils/miniappPromise.js'
 Page({
   data: {
-    isShow: false,
+    array: ['男', '女'],
     isEdit: false,
+    isAdmin: false,
+    adminForm: {
+      userName: '',
+      headImg: '',
+      userId: ''
+    },
     userForm: {
       name: '与君威',
       phone: '13922289159',
@@ -29,40 +36,24 @@ Page({
   },
   onLoad(e) {
     console.log(e)
-    if (!+e.isShowJoin) {
-      this.setData({
-        isShow: false,
-      })
-    }
-    if (Boolean(e.isEdit) && Boolean(e.isShow)) {
-      this.getData();
-      this.setData({
-        isShow: true,
-        isEdit: true
-      })
-    }
-    if (e.id !== '') {
-      this.getUserId(e.id);
-    } else {
-      console.log('123123')
-
-    }
-
+    //如果isfrom为true说明来自首页,再判断用户身份，如果是会员可以修改全部，调用普通会员的保存接口，如果是超管且isfrom为false就调用普通会员的保存接口，如果isfrom为false则调用超管的
+    this.setData({
+      isfrom: e.isfrom === 'false' ? false : true,
+      userId: e.id,
+      isAdmin: Number(e.isAdmin)
+    })
+    this.getUserId(e.id)
   },
   getUserId(userId) {
-    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`, {
+    console.log(userId)
+    $ajax.post(`${queryUser}?token=${wx.getStorageSync('token')}`, {
       userId
     }).then(res => {
       this.setData({
-        userInfo: res.data.data
-      })
-      this.getGradeList(res.data.data.cateId)
-    })
-  },
-  getData() {
-    $ajax.post(`${getUserData}?token=${wx.getStorageSync('token')}`).then(res => {
-      this.setData({
-        userInfo: res.data.data
+        gender_sex: res.data.data.gender === '1' ? '男' : '女',
+        userInfo: res.data.data,
+        'adminForm.headImg': res.data.data.headImg,
+        'adminForm.userId': userId,
       })
       this.getGradeList(res.data.data.cateId)
     })
@@ -72,15 +63,27 @@ Page({
     this.popBottom.show()
   },
   checkInfo() {
-    $ajax.post(`${editUser}?token=${wx.getStorageSync('token')}`, this.data.userInfo).then(res => {
-      Toast('保存成功')
-      this.setData({
-        isShow: true,
-        isEdit: true
+    if (this.data.isfrom) {
+      //来自正常进入
+      $ajax.post(`${editUser}?token=${wx.getStorageSync('token')}`, this.data.userInfo).then(res => {
+        Toast('保存成功')
+        this.setData({
+          isEdit: false
+        })
+      }).then(res => {
+        this.getUserId(this.data.userId)
       })
-    }).then(res => {
-      this.getData()
-    })
+    } else if (!this.data.isfrom && this.data.isAdmin === 30) {
+      $ajax.post(`${update_user}?token=${wx.getStorageSync('token')}`, this.data.adminForm).then(res => {
+        Toast('保存成功')
+        this.setData({
+          isEdit: false
+        })
+      }).then(res => {
+        this.getUserId(this.data.userId)
+      })
+    }
+
   },
   getGame() {
     $ajax.post(queryCateGory).then(res => {
@@ -88,6 +91,23 @@ Page({
       this.setData({
         gameList: res.data.data
       })
+    })
+  },
+  AdminGetName(e) {
+    this.setData({
+      'adminForm.userName': e.detail.value
+    })
+  },
+  changeSex: function(e) {
+    console.log(e.detail.value)
+    this.setData({
+      gender_sex: e.detail.value === '0' ? '男' : '女',
+      'userInfo.gender': e.detail.value === '0' ? '0' : '1'
+    })
+  },
+  EditFalse() {
+    this.setData({
+      isEdit: false
     })
   },
   bindPickerChange: function(e) {
@@ -176,9 +196,18 @@ Page({
             })
           }
           console.log(imgList)
-          this.setData({
-            'userInfo.payCodeUrl': imgList[0].url
-          })
+          if (!this.data.isfrom && this.data.isAdmin === 30) {
+            // 超管
+            this.setData({
+              'adminForm.headImg': imgList[0].url
+            })
+          } else {
+            // 用户
+            this.setData({
+              'userInfo.payCodeUrl': imgList[0].url
+            })
+          }
+
         })
       }
     })
