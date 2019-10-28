@@ -34,6 +34,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    borderColor: '',
     ishiddenPopup: '', //原生组件防止穿透
     endTime: '请选择封号时间',
     reason: '',
@@ -109,13 +110,31 @@ Page({
    */
   onLoad: function(options) {
     wx.setStorageSync('token', wx.getStorageSync('userObj').token)
+
+  },
+  onShow: function() {
     this.getData();
   },
   getData() {
     let api = usermanage;
     $ajax.post(`${api}?token=${wx.getStorageSync('token')}`, this.data.form).then(res => {
+      let itemList = res.data.data;
+      itemList.forEach(item => {
+        switch (item.userType) {
+          case 10:
+            item.borderColor = 'p1'
+            break;
+          case 20:
+            item.borderColor = 'p2'
+            break;
+          case 30:
+            item.borderColor = 'p3'
+            break;
+        }
+      })
       this.setData({
-        itemList: res.data.data
+        itemList: res.data.data,
+        borderColor: ''
       })
     })
   },
@@ -285,39 +304,5 @@ Page({
     this.setData({
       nowMoney: e.detail.value
     })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {}
+  }
 })

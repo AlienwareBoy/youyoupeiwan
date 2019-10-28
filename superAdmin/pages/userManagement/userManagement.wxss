@@ -5,6 +5,29 @@
   padding-top: 46rpx;
 }
 
+.userType {
+  padding: 5rpx 10rpx;
+  border-radius: 10rpx;
+  font-size: 18rpx;
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+}
+
+.p3 {
+  border: 1rpx solid red;
+  color: red;
+}
+
+.p2 {
+  border: 1rpx solid blue;
+  color: blue;
+}
+
+.p1 {
+  border: 1rpx solid #ccc;
+  color: #ccc;
+}
+
 .up {
   width: 0;
   height: 0;
@@ -284,10 +307,12 @@
   text-align: center;
   margin-top: 20rpx;
 }
-.endTimeInput text{
+
+.endTimeInput text {
   font-size: 20rpx;
   color: #000;
 }
+
 .otherStyle {
   /* position: absolute;
   bottom: 21rpx;

@@ -48,7 +48,12 @@ Page({
     let {
       type
     } = e.currentTarget.dataset;
-    if (type === 'password') {
+    if (type === 'userName') {
+      if (/^(?![^A-z]+$)(?!\D+$)[A-z\d]{3,8}$/.test(e.detail.value)) {} else {
+        Toast('必须数字和字母组合，且长度为3到8','none',2000)
+        return
+      }
+    } else if (type === 'password') {
       if (e.detail.value.length < 6) {
         Toast('密码 长度需大于6位')
         return
@@ -169,7 +174,7 @@ Page({
           $ajax.post(login, {
             userName: this.data.checkcForm.userName,
             password: this.data.checkcForm.password,
-            nick:wx.getStorageSync('userInfo').nickName,
+            nick: wx.getStorageSync('userInfo').nickName,
             headImg: wx.getStorageSync('userInfo').avatarUrl,
           }).then(res => {
             wx.setStorageSync('userObj', res.data.data)

@@ -1,11 +1,10 @@
 class Storage {
   constructor() {
     this.instance = undefined;
-    // this.state = state;
-    // console.log(Storage.instance)
   }
   // 保证页面只实例化一个Storage
   init() {
+    console.log('sdf')
     if (!this.instance) {
       this.instance = new Storage()
     }

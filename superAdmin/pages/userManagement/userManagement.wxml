@@ -7,7 +7,13 @@
           <image class="userImage" src="{{item.headImg}}"></image>
         </view>
         <view class="userInfo column">
-          <text class="userName">{{item.userName}}</text>
+          <view class="row" style="justify-content:center">
+            <text class="userName">{{item.userName}}</text>
+            <text class="userType row {{item.borderColor}}" wx:if="{{item.userType===30}}">超管</text>
+            <text class="userType row {{item.borderColor}}" wx:elif="{{item.userType===20}}">会员</text>
+            <text class="userType row {{item.borderColor}}" wx:else>用户</text>
+          </view>
+
           <view class="money">
             <text>当前余额:{{item.useMoney}}</text>
             <text wx:if="{{item.reUserName===''}}" style="color:red">自然进入</text>

@@ -7,6 +7,7 @@ import {
   auth
 } from '../../utils/api'
 const app = getApp();
+import China from '../../utils/city.js'
 Page({
   data: {
     form: {
@@ -26,9 +27,35 @@ Page({
     hasUserInfo: false,
   },
   onLoad(e) {
-    this.setData({
-      shareId: e.shareId
+    let pickData = {
+      data1: [],
+      data2: {}
+    }
+    console.log(China.provide)
+    China.provide.forEach(item => {
+      pickData.data1.push({
+        text: item.name,
+        value: item.code
+      })
+      if (item.city) {
+        let arr = []
+        item.city.forEach((item1, index) => {
+          let provideCode = item.code.substring(0, 3)
+          let cityCode = item1.code.substring(0, 3)
+          if (provideCode === cityCode) {
+            arr.push({
+              text: item1.name,
+              value: item1.code
+            })
+            pickData.data2[item.code] = arr
+          }
+        })
+      }
     })
+    console.log(pickData)
+    // this.setData({
+    //   shareId: e.shareId
+    // })
   },
   currentAdd(e) {
     if (e.detail.userInfo) {
@@ -127,7 +154,7 @@ Page({
       $ajax.post(login, {
         userName: username,
         password,
-        nick:wx.getStorageSync('userInfo').nickName,
+        nick: wx.getStorageSync('userInfo').nickName,
         headImg: wx.getStorageSync('userInfo').avatarUrl,
       }).then(res => {
         wx.setStorageSync('userObj', res.data.data)
